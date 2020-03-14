@@ -63,7 +63,7 @@
 
 <br>
 
-<div align="center" style="margin-top:80px">
+<div style="margin-top:80px">
     <button id="studentmanual" class="btn btn-success btn-lg">ADD STUDENTS</button>
 </div>
 
@@ -148,7 +148,7 @@
                         <label for="studentaddress">Student Address</label>
                         <input type="text" class="form-control" id="studentadress" name="saddr" placeholder="Address">
                     </div>
-                    <div align="right">
+                    <div >
                         <input type="submit" class="btn btn-default" name="ADD" value="ADD">
                     </div>
                 </form>
@@ -249,16 +249,16 @@
     <table id="studentstable" style="margin-left: 80px">
         <caption><strong>Student Information </strong></caption>
         <tr>
-            <th id="student roll" width=100>Student Roll</th>
-            <th id="studentname" width=100>StudentName</th>
-            <th id="student branch" width=50>Student Branch</th>
-            <th id="dateofbirth" width="100">Date of Birth</th>
-            <th id="contact" width="100">Contact No.</th>
-            <th id="email" width="100">Email ID</th>
-            <th id="section" width="50   ">Section</th>
-            <th id="semester" width="40">Semester</th>
-            <th id="address" width="100">Address</th>
-            <th id="action" width="40">Action</th>
+            <th id="student roll" >Student Roll</th>
+            <th id="studentname"  >StudentName</th>
+            <th id="student branch">Student Branch</th>
+            <th id="dateofbirth" >Date of Birth</th>
+            <th id="contact" >Contact No.</th>
+            <th id="email" >Email ID</th>
+            <th id="section" >Section</th>
+            <th id="semester" >Semester</th>
+            <th id="address">Address</th>
+            <th id="action" >Action</th>
         </tr>
         <tbody>
         <?php

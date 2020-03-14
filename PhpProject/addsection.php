@@ -63,7 +63,7 @@
 
 <br>
 
-<div align="center" style="margin-top:80px">
+<div style="margin-top:80px">
     <form name="import" method="post" enctype="multipart/form-data">
         <input type="file" name="file"/>
         <input type="submit" name="teacherexcel" id="teacherexcel" class="btn btn-info btn-lg" value="IMPORT EXCEL"/>
@@ -72,7 +72,7 @@
 
     ?>
 </div>
-<div align="center" style="margin-top:20px">
+<div  style="margin-top:20px">
     <button id="teachermanual" class="btn btn-success btn-lg">ADD SECTION</button>
 </div>
 
@@ -135,7 +135,7 @@
                     </div>
                    
 
-                    <div align="right">
+                    <div >
                         <input type="submit" class="btn btn-default" name="ADD" value="ADD">
                     </div>
                 </form>
@@ -235,12 +235,12 @@
     <table id="sectiontable" style="margin-left: 80px">
         <caption><strong>Section Information </strong></caption>
         <tr>
-            <th id="section" width="130">Section Name</th>
-            <th id="section" width=290>Section Strength</th>
+            <th id="section" >Section Name</th>
+            <th id="section" >Section Strength</th>
            
-            <th id="class room" width="190">Class Room No </th>
+            <th id="class room">Class Room No </th>
             
-            <th id="action" width="40">Action</th>
+            <th id="action" >Action</th>
         </tr>
         <tbody>
         <?php
