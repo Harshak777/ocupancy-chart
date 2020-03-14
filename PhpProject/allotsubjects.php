@@ -1,3 +1,9 @@
+<?php
+
+include 'connection.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -60,23 +66,23 @@
 </div>
 <!--NAVBAR SECTION END-->
 <br>
-<div align="center">
+<div>
     <form action="allotmentFormvalidation.php" method="post" style="margin-top: 100px">
 
 
         <div style="margin-top: 5px">
             <select name="tobealloted" class="list-group-item">
                 <?php
-                include 'connection.php';
+               $q1=  "SELECT * FROM subjects";
                 $q = mysqli_query($conn,
-                    "SELECT * FROM subjects");
+                   $q1);
                 $row_count = mysqli_num_rows($q);
                 if ($row_count) {
                     $mystring = '
          <option selected disabled>Select Subject</option>';
                     while ($row = mysqli_fetch_assoc($q)) {
                         if ($row['isAlloted'] == 1 || $row['course_type'] == "LAB")
-                            continue;
+                            {continue;}
                         $mystring .= '<option value="' . $row['subject_code'] . '">' . $row['subject_name'] . '</option>';
                     }
 
@@ -88,10 +94,10 @@
         <div>
             <select name="toalloted" class="list-group-item">
                 <?php
-                include 'connection.php';
+                $q2 = "SELECT * FROM teachers ";
 
                 $q = mysqli_query($conn,
-                    "SELECT * FROM teachers ");
+                    $q2);
                 $row_count = mysqli_num_rows($q);
                 if ($row_count) {
                     $mystring = '
@@ -159,21 +165,21 @@
 <table id=allotedsubjectstable>
     <caption><strong>THEORY COURSES ALLOTMENT</strong></caption>
     <tr>
-        <th id="subjectcode" width="150">Subject Code</th>
-        <th id="subjecttitle" width=420>Subject Title</th>
-        <th id="fscultyno" width="170">Faculty No</th>
-        <th id="teachersname" width="330">Teacher's Name</th>
-        <th id="action" width="40">Action</th>
+        <th id="subjectcode" >Subject Code</th>
+        <th id="subjecttitle">Subject Title</th>
+        <th id="fscultyno">Faculty No</th>
+        <th id="teachersname" >Teacher's Name</th>
+        <th id="action" >Action</th>
     </tr>
     <tbody>
     <?php
-    include 'connection.php';
+    $q3 = "SELECT * FROM subjects";
     $q = mysqli_query($conn,
-        "SELECT * FROM subjects ");
+        $q3);
 
     while ($row = mysqli_fetch_assoc($q)) {
-        if ($row['isAlloted'] == 0 || $row['course_type'] == 'LAB')
-            continue;
+        if ($row['isAlloted'] == 0 || $row['course_type'] == 'LAB'){
+            continue;}
         $teacher_id = $row['allotedto'];
         $t = mysqli_query($conn,
             "SELECT name FROM teachers WHERE faculty_number = '$teacher_id'");
@@ -195,7 +201,7 @@
 <!--HOME SECTION END-->
 
 <!--<div id="footer">
-    <!--  &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
+      &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
 -->
 <!-- FOOTER SECTION END-->
 
