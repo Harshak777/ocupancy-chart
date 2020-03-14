@@ -63,7 +63,7 @@
 <!--NAVBAR SECTION END-->
 <br>
 
-<div align="center" style="margin-top:80px">
+<div  style="margin-top:80px">
     <form name="import" method="post" enctype="multipart/form-data">
         <input type="file" name="file"/>
         <input type="submit" name="teacherexcel" id="teacherexcel" class="btn btn-info btn-lg" value="IMPORT EXCEL"/>
@@ -88,8 +88,9 @@
                 if ($facno == "" || $facno == "Faculty No.") {
                     continue;
                 }
+                $q1 = "INSERT INTO teachers VALUES ('$facno','$name','$alias','$designation','$contact','$email')";
                 $q = mysqli_query($conn,
-                    "INSERT INTO teachers VALUES ('$facno','$name','$alias','$designation','$contact','$email')");
+                    $q1);
                 if ($q) {
                     $sql = "CREATE TABLE " . $facno . " (
                 day VARCHAR(10) PRIMARY KEY, 
@@ -113,7 +114,7 @@
     }
     ?>
 </div>
-<div align="center" style="margin-top:20px">
+<div  style="margin-top:20px">
     <button id="teachermanual" class="btn btn-success btn-lg">ADD TEACHER</button>
 </div>
 
@@ -176,7 +177,7 @@
                         <input type="text" class="form-control" id="teacheraddress" name="TA" placeholder="Address">
                     </div>
 
-                    <div align="right">
+                    <div >
                         <input type="submit" class="btn btn-default" name="ADD" value="ADD">
                     </div>
                 </form>
@@ -276,19 +277,20 @@
     <table id=teacherstable style="margin-left: 80px">
         <caption><strong>Teacher's Information </strong></caption>
         <tr>
-            <th id="faculty" width="130">Faculty No</th>
-            <th id="name" width=290>Name</th>
-            <th id="alias" width=50>Alias</th>
-            <th id="designation" width="190">Designation</th>
-            <th id="contact" width="190">Contact No.</th>
-            <th id="email" width="290">Email ID</th>
-            <th id="action" width="40">Action</th>
+            <th id="faculty" >Faculty No</th>
+            <th id="name" >Name</th>
+            <th id="alias" >Alias</th>
+            <th id="designation" >Designation</th>
+            <th id="contact" >Contact No.</th>
+            <th id="email" >Email ID</th>
+            <th id="action" >Action</th>
         </tr>
         <tbody>
         <?php
         include 'connection.php';
+        $qq = "SELECT * FROM teachers ORDER BY faculty_number ASC";
         $q = mysqli_query($conn,
-            "SELECT * FROM teachers ORDER BY faculty_number ASC");
+            $qq);
 
         while ($row = mysqli_fetch_assoc($q)) {
             echo "<tr><td>{$row['faculty_number']}</td>
