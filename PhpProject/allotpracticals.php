@@ -65,8 +65,9 @@
         <select name="tobealloted" class="list-group-item">
             <?php
             include 'connection.php';
+            $q2 = "SELECT * FROM subjects WHERE course_type = 'LAB'";
             $q = mysqli_query($conn,
-                "SELECT * FROM subjects WHERE course_type = 'LAB'");
+                $q2);
             $row_count = mysqli_num_rows($q);
             if ($row_count) {
                 $mystring = '
@@ -86,9 +87,10 @@
         <select name="toalloted" class="list-group-item">
             <?php
             include 'connection.php';
+            $qss = "SELECT * FROM teachers ";
 
             $q = mysqli_query($conn,
-                "SELECT * FROM teachers ");
+                $qss);
             $row_count = mysqli_num_rows($q);
             if ($row_count) {
                 $mystring = '
@@ -106,9 +108,10 @@
         <select name="toalloted2" class="list-group-item">
             <?php
             include 'connection.php';
+            $qq =  "SELECT * FROM teachers ";
 
             $q = mysqli_query($conn,
-                "SELECT * FROM teachers ");
+               $qq);
             $row_count = mysqli_num_rows($q);
             if ($row_count) {
                 $mystring = '
@@ -149,17 +152,13 @@
     </div>
 </form>
 <?php
-/**
- * Created by PhpStorm.
- * User: MSaqib
- * Date: 16-11-2016
- * Time: 14:13
- */
+
 include 'connection.php';
 if (isset($_GET['name'])) {
     $id = $_GET['name'];
+    $qus =  "UPDATE subjects  SET isAlloted = '0' , allotedto = '',allotedto2 = '',allotedto3 = '' WHERE subject_code = '$id' ";
     $q = mysqli_query($conn,
-        "UPDATE subjects  SET isAlloted = '0' , allotedto = '',allotedto2 = '',allotedto3 = '' WHERE subject_code = '$id' ");
+       $qus);
 
 }
 
@@ -227,8 +226,9 @@ if (isset($_GET['name'])) {
     <tbody>
     <?php
     include 'connection.php';
+    $qs = "SELECT * FROM subjects";
     $q = mysqli_query($conn,
-        "SELECT * FROM subjects");
+        $qs);
 
     while ($row = mysqli_fetch_assoc($q)) {
         if ($row['isAlloted'] == 0)
@@ -238,14 +238,17 @@ if (isset($_GET['name'])) {
         $teacher_id1 = $row['allotedto'];
         $teacher_id2 = $row['allotedto2'];
         $teacher_id3 = $row['allotedto3'];
+        $t1s = "SELECT name FROM teachers WHERE faculty_number = '$teacher_id1'";
         $t1 = mysqli_query($conn,
-            "SELECT name FROM teachers WHERE faculty_number = '$teacher_id1'");
+            $t1s);
         $trow1 = mysqli_fetch_assoc($t1);
+        $t2s = "SELECT name FROM teachers WHERE faculty_number = '$teacher_id2'";
         $t2 = mysqli_query($conn,
-            "SELECT name FROM teachers WHERE faculty_number = '$teacher_id2'");
+           $t2s );
         $trow2 = mysqli_fetch_assoc($t2);
+        $t3s="SELECT name FROM teachers WHERE faculty_number = '$teacher_id3'";
         $t3 = mysqli_query($conn,
-            "SELECT name FROM teachers WHERE faculty_number = '$teacher_id3'");
+            $t3s);
         $trow3 = mysqli_fetch_assoc($t3);
         echo "<tr><td>{$row['subject_code']}</td>
                     <td>{$row['subject_name']}</td>
