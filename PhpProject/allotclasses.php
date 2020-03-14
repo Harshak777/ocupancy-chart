@@ -66,13 +66,14 @@ if (isset($_POST['in_class'])) {
     include 'connection.php';
     $year = $_POST['course'];
     $class = $_POST['in_class'];
+    $qy = "UPDATE classrooms SET status = '$year' WHERE name = '$class'";
     $q = mysqli_query($conn,
-        "UPDATE classrooms SET status = '$year' WHERE name = '$class'");
+        $qy);
 }
 ?>
 <form action="allotclasses.php" method="post" style="margin-top: 100px">
 
-    <div align="center">
+    <div >
         <select name="course" class="list-group-item">
             <option selected disabled>Select Course</option>
             ';
@@ -82,18 +83,20 @@ if (isset($_POST['in_class'])) {
         </select>
     </div>
 
-    <div align="center" style="margin-top: 5px">
+    <div  style="margin-top: 5px">
         <select name="in_class" class="list-group-item">
             <?php
             include 'connection.php';
+            $qq = "SELECT * FROM classrooms";
             $q = mysqli_query($conn,
-                "SELECT * FROM classrooms");
+                $qq);
             $row_count = mysqli_num_rows($q);
             if ($row_count) {
                 $mystring = '
              <option selected disabled>Select Classroom</option>';
                 while ($row = mysqli_fetch_assoc($q)) {
-                    if ($row['status'] != 0)
+                    $rs = $row['status'];
+                    if ($rs != 0)
                         continue;
                     $mystring .= '<option value="' . $row['name'] . '">' . $row['name'] . '</option>';
                 }
@@ -102,7 +105,7 @@ if (isset($_POST['in_class'])) {
             ?>
         </select>
     </div>
-    <div align="center" style="margin-top: 10px;">
+    <div style="margin-top: 10px;">
         <button type="submit" class="btn btn-success btn-lg">Allot</button>
     </div>
 </form>
@@ -132,7 +135,7 @@ if (isset($_POST['in_class'])) {
         }
     }
 </script>
-<div align="center">
+<div >
     <style>
         table {
             margin-top: 70px;
@@ -157,22 +160,22 @@ if (isset($_POST['in_class'])) {
     <table id=allotedclassroomstable>
         <caption><strong>CLASSROOMS ALLOTMENT</strong></caption>
         <tr>
-            <th id="classroom" width="250">Classroom</th>
-            <th id="alloted" width="400">Alloted To</th>
-            <th id="action" width="60">Action</th>
+            <th id="classroom" >Classroom</th>
+            <th id="alloted" >Alloted To</th>
+            <th id="action" >Action</th>
         </tr>
         <tbody>
         <?php
         include 'connection.php';
         $q = mysqli_query($conn,
-            "SELECT * FROM classrooms ");
+           $qq);
         $courses = array('B.Tech 2nd Year', 'B.Tech 3rd Year', 'B.Tech 4rth Year');
         while ($row = mysqli_fetch_assoc($q)) {
-            if ($row['status'] == 0)
-                continue;
+            if ($rs == 0)
+               { continue;}
 
             echo "<tr><td>{$row['name']}</td>
-                    <td>{$courses[$row['status']-2]}</td>
+                    <td>{$courses[$rs-2]}</td>
                 <td><button>Delete</button></td>
                     </tr>\n";
         }
@@ -183,9 +186,7 @@ if (isset($_POST['in_class'])) {
 </div>
 <!--HOME SECTION END-->
 
-<!--<div id="footer">
-    <!--  &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
--->
+
 <!-- FOOTER SECTION END-->
 
 <!--  Jquery Core Script -->

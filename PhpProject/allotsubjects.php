@@ -178,8 +178,8 @@ include 'connection.php';
         $q3);
 
     while ($row = mysqli_fetch_assoc($q)) {
-        if ($row['isAlloted'] == 0 || $row['course_type'] == 'LAB'){
-            continue;}
+        if ($row['isAlloted'] == 0 || $row['course_type'] == 'LAB')
+        {continue;}
         $teacher_id = $row['allotedto'];
         $t = mysqli_query($conn,
             "SELECT name FROM teachers WHERE faculty_number = '$teacher_id'");
@@ -200,9 +200,7 @@ include 'connection.php';
 
 <!--HOME SECTION END-->
 
-<!--<div id="footer">
-      &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
--->
+
 <!-- FOOTER SECTION END-->
 
 <!--  Jquery Core Script -->
