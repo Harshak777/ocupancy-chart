@@ -157,20 +157,20 @@ include('connection.php');
 </form>
 
 <div id="TT" style="background-color: #FFFFFF">
-        <table border="2" cellspacing="3" align="center" id="timetable">
+        <table  cellspacing="3" id="timetable">
             <caption><strong><br><br>
                    
                 </strong></caption>
             <tr>
-                <td style="text-align:center">WEEKDAYS</td>
-                <td style="text-align:center">8:45-9:45</td>
-                <td style="text-align:center">9:45-10:45</td>
-                <td style="text-align:center">10:45-11:00</td>
-                <td style="text-align:center">11:00-12:00</td>
-                <td style="text-align:center">12:00-1:00</td>
-                <td style="text-align:center">1:00-2:30</td>
-                <td style="text-align:center">2:00-3:00</td>
-                <td style="text-align:center">3:00-4:00</td>
+                <th style="text-align:center">WEEKDAYS</th>
+                <th style="text-align:center">8:45-9:45</th>
+                <th style="text-align:center">9:45-10:45</th>
+                <th style="text-align:center">10:45-11:00</th>
+                <th style="text-align:center">11:00-12:00</th>
+                <th style="text-align:center">12:00-1:00</th>
+                <th style="text-align:center">1:00-2:30</th>
+                <th style="text-align:center">2:00-3:00</th>
+                <th style="text-align:center">3:00-4:00</th>
 
             </tr>
             <tr>
@@ -188,16 +188,16 @@ include('connection.php');
                   $i++;
 
                   echo "
-           <tr><td style=\"text-align:center\">$days[$i]</td>
-           <td style=\"text-align:center\">{$row['period1']}</td>
-          <td style=\"text-align:center\">{$row['period2']}</td>
-          <td style=\"text-align:center\">BREAK</td>
-          <td style=\"text-align:center\">{$row['period3']}</td>
-           <td style=\"text-align:center\">{$row['period4']}</td>
-           <td style=\"text-align:center\">LUNCH</td>
+           <tr><th style=\"text-align:center\">$days[$i]</th>
+           <th style=\"text-align:center\">{$row['period1']}</th>
+          <th style=\"text-align:center\">{$row['period2']}</th>
+          <th style=\"text-align:center\">BREAK</th>
+          <th style=\"text-align:center\">{$row['period3']}</th>
+           <th style=\"text-align:center\">{$row['period4']}</th>
+           <th style=\"text-align:center\">LUNCH</th>
 
-            <td style=\"text-align:center\">{$row['period5']}</td>
-            <td style=\"text-align:center\">{$row['period6']}</td>
+            <th style=\"text-align:center\">{$row['period5']}</th>
+            <th style=\"text-align:center\">{$row['period6']}</th>
           </tr>\n";
               }
             }
@@ -349,14 +349,14 @@ include('connection.php');
                     ?>
                 </strong></caption>
             <tr>
-                <td style="text-align:center">WEEKDAYS</td>
-                <td style="text-align:center">8:00-8:50</td>
-                <td style="text-align:center">8:55-9:45</td>
-                <td style="text-align:center">9:50-10:40</td>
-                <td style="text-align:center">10:45-11:35</td>
-                <td style="text-align:center">11:40-12:30</td>
-                <td style="text-align:center">12:30-1:30</td>
-                <td style="text-align:center">1:30-4:00</td>
+                <th style="text-align:center">WEEKDAYS</th>
+                <th style="text-align:center">8:00-8:50</th>
+                <th style="text-align:center">8:55-9:45</th>
+                <th style="text-align:center">9:50-10:40</th>
+                <th style="text-align:center">10:45-11:35</th>
+                <th style="text-align:center">11:40-12:30</th>
+                <th style="text-align:center">12:30-1:30</th>
+                <th style="text-align:center">1:30-4:00</th>
             </tr>
             <tr>
                 <?php
@@ -431,14 +431,14 @@ include('connection.php');
                         $i++;
 
                         echo "
-                 <tr><td style=\"text-align:center\">$days[$i]</td>
-                 <td style=\"text-align:center\">{$row['period1']}</td>
-                <td style=\"text-align:center\">{$row['period2']}</td>
-                <td style=\"text-align:center\">{$row['period3']}</td>
-                 <td style=\"text-align:center\">{$row['period4']}</td>
-                  <td style=\"text-align:center\">{$row['period5']}</td>
-                  <td style=\"text-align:center\">LUNCH</td>
-                  <td style=\"text-align:center\">{$row['period6']}</td>
+                 <tr><th style=\"text-align:center\">$days[$i]</th>
+                 <th style=\"text-align:center\">{$row['period1']}</th>
+                <th style=\"text-align:center\">{$row['period2']}</th>
+                <th style=\"text-align:center\">{$row['period3']}</th>
+                 <th style=\"text-align:center\">{$row['period4']}</th>
+                  <th style=\"text-align:center\">{$row['period5']}</th>
+                  <th style=\"text-align:center\">LUNCH</th>
+                  <th style=\"text-align:center\">{$row['period6']}</th>
                 </tr>\n";
                     }
 
