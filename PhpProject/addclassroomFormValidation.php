@@ -14,7 +14,8 @@ if (isset($_POST['CN']) && isset($_POST['CS']) && isset($_POST['CPP']) && isset(
     echo "<script type='text/javascript'>alert('$message');</script>";
     die();
 }
-$q = mysqli_query($conn, "INSERT INTO classrooms ( croom_no,c_strength,pp_no,projector,smart_class,speaker ) VALUES ('$roomno','$cstrength','$cpowerpoint','$projector','$smartclass','$speaker')");
+$ins = "INSERT INTO classrooms ( croom_no,c_strength,pp_no,projector,smart_class,speaker ) VALUES ('$roomno','$cstrength','$cpowerpoint','$projector','$smartclass','$speaker')";
+$q = mysqli_query($conn, $ins);
  $sql = "CREATE TABLE " . $roomno . " (
  dayid VARCHAR(10) PRIMARY KEY, 
  day VARCHAR(10), 
