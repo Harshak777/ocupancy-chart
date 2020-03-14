@@ -28,9 +28,8 @@ driver.find_element_by_xpath(NEXT_BUTTON_XPATH).submit()
 driver.implicitly_wait(3)
 time.sleep(3)
 
-driver.find_element_by_link_text('vijay jonathan').click()
-driver.implicitly_wait(3)
-time.sleep(3)
-driver.quit()
+if "Timetable companion" == driver.title:
+    print('Test Passed')
+else:
+    print('Test Failed')
 
-print('hi')
