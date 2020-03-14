@@ -63,7 +63,7 @@
 <!--NAVBAR SECTION END-->
 <br>
 
-<div align="center"
+<div 
      style="margin-top:10%">
     <button
         id="classroommanual" class="btn btn-success btn-lg">ADD CLASSROOM
@@ -71,7 +71,7 @@
    
 </div>
 
-<div align="center">
+<div>
     <br>
     <style>
         table {
@@ -123,14 +123,14 @@
         <caption><strong>ADDED CLASSROOMS</strong></caption>
         <tr>
 
-            <th id="room" width="100">Room No</th>
-            <th id="capacity" width="100">Capacity</th>
-            <th id="power" width="100">Power Points</th>
-            <th id="project" width="100">Projector Availability</th>
-            <th id="smart" width="100">Smart Class</th>
-            <th id="speaker" width="100">Speaker</th>
-            <th id="section" width="100">Section Alloted</th>
-            <th id="action" width="60">Action</th>
+            <th id="room">Room No</th>
+            <th id="capacity"  >Capacity</th>
+            <th id="power"  >Power Points</th>
+            <th id="project"  >Projector Availability</th>
+            <th id="smart"  >Smart Class</th>
+            <th id="speaker"  >Speaker</th>
+            <th id="section"  >Section Alloted</th>
+            <th id="action" >Action</th>
         </tr>
         <tbody>
         <?php
@@ -215,7 +215,7 @@
 
 
 
-                    <div align="right">
+                    <div >
                         <input type="submit" class="btn btn-default" name="ADD" value="ADD">
                     </div>
                 </form>
