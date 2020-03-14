@@ -107,7 +107,7 @@ $tid=$_SESSION['tid'];
 					</h3>
 				</div>
 				<div class="panel-body">
-					<fieldset id="profile">
+					<fieldset id="profile">  <legend>
           <div class="form-group">
 							<label for="name"><?php echo 'Your Name' ?></label>
 							<input type="email" id="email" name="name" value="<?php echo $row['name']; ?>" class="form-control">
@@ -149,6 +149,7 @@ $tid=$_SESSION['tid'];
 								<button id="update-profile" class="btn btn-success btn-block" type="button"><em class="glyphicon glyphicon-ok"></em> <?php echo 'Update profile' ?></button>
 							</div>
 						</div>
+            </legend>
 					</fieldset>
 				</div>
 			</div>
@@ -211,7 +212,7 @@ $tid=$_SESSION['tid'];
           <div class="modal-body">Here are some quick options:
             <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><em class="fa fa-user"></em> <strong>My profile</strong></a>
                <?php if(getLoggedAdmin()){ ?>
-               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><i class="fa fa-cog"></i> <strong><?php echo $Translation['admin area']; ?></strong></a>
+               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><em class="fa fa-cog"></em> <strong><?php echo $Translation['admin area']; ?></strong></a>
                <?php } ?>
                <?php if(!$_GET['signIn'] && !$_GET['loginFailed']){ ?>
                <?php if(getLoggedMemberID() == $adminConfig['anonymousMember']){ ?>
