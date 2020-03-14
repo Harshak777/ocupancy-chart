@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1584178399">
+  <project timestamp="1584178399">
+    <package name="UnitTestFiles\Test">
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\AdminLoginNameTest.php">
+        <class name="UnitTestFiles\Test\AdminLoginNameTest" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+        </class>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="13" type="stmt" count="1"/>
+        <line num="14" type="stmt" count="1"/>
+        <line num="15" type="stmt" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\AdminLoginNameTestn.php">
+        <class name="UnitTestFiles\Test\AdminLoginNameTestn" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="1" type="stmt" count="0"/>
+        <line num="2" type="stmt" count="0"/>
+        <line num="3" type="stmt" count="0"/>
+        <line num="4" type="stmt" count="0"/>
+        <line num="5" type="stmt" count="0"/>
+        <line num="6" type="stmt" count="0"/>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\AdminLoginPassTest.php">
+        <class name="UnitTestFiles\Test\AdminLoginPassTest" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+        </class>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="13" type="stmt" count="1"/>
+        <line num="14" type="stmt" count="1"/>
+        <line num="15" type="stmt" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\AdminLoginPassTestn.php">
+        <class name="UnitTestFiles\Test\AdminLoginPassTestn" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="1" type="stmt" count="0"/>
+        <line num="2" type="stmt" count="0"/>
+        <line num="3" type="stmt" count="0"/>
+        <line num="4" type="stmt" count="0"/>
+        <line num="5" type="stmt" count="0"/>
+        <line num="6" type="stmt" count="0"/>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\EmailTest1.php">
+        <class name="UnitTestFiles\Test\EmailTest1" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="1" type="stmt" count="0"/>
+        <line num="2" type="stmt" count="0"/>
+        <line num="3" type="stmt" count="0"/>
+        <line num="4" type="stmt" count="0"/>
+        <line num="5" type="stmt" count="0"/>
+        <line num="6" type="stmt" count="0"/>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\EmailTest1n.php">
+        <class name="UnitTestFiles\Test\EmailTest1n" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="1" type="stmt" count="0"/>
+        <line num="2" type="stmt" count="0"/>
+        <line num="3" type="stmt" count="0"/>
+        <line num="4" type="stmt" count="0"/>
+        <line num="5" type="stmt" count="0"/>
+        <line num="6" type="stmt" count="0"/>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\PassTest1.php">
+        <class name="UnitTestFiles\Test\PassTest1" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="1" type="stmt" count="0"/>
+        <line num="2" type="stmt" count="0"/>
+        <line num="3" type="stmt" count="0"/>
+        <line num="4" type="stmt" count="0"/>
+        <line num="5" type="stmt" count="0"/>
+        <line num="6" type="stmt" count="0"/>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\PassTest1n.php">
+        <class name="UnitTestFiles\Test\PassTest1n" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="1" type="stmt" count="0"/>
+        <line num="2" type="stmt" count="0"/>
+        <line num="3" type="stmt" count="0"/>
+        <line num="4" type="stmt" count="0"/>
+        <line num="5" type="stmt" count="0"/>
+        <line num="6" type="stmt" count="0"/>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\StudentLoginNameTest.php">
+        <class name="UnitTestFiles\Test\StudentLoginNameTest" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+        </class>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="13" type="stmt" count="1"/>
+        <line num="14" type="stmt" count="1"/>
+        <line num="15" type="stmt" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\StudentLoginNameTestn.php">
+        <class name="UnitTestFiles\Test\StudentLoginNameTestn" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="1" type="stmt" count="0"/>
+        <line num="2" type="stmt" count="0"/>
+        <line num="3" type="stmt" count="0"/>
+        <line num="4" type="stmt" count="0"/>
+        <line num="5" type="stmt" count="0"/>
+        <line num="6" type="stmt" count="0"/>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\StudentLoginPassTest.php">
+        <class name="UnitTestFiles\Test\StudentLoginPassTest" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+        </class>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="13" type="stmt" count="1"/>
+        <line num="14" type="stmt" count="1"/>
+        <line num="15" type="stmt" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+      </file>
+      <file name="C:\Users\Harshak-PC\Desktop\unit\tests\StudentLoginPassTestn.php">
+        <class name="UnitTestFiles\Test\StudentLoginPassTestn" namespace="UnitTestFiles\Test">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="1" type="stmt" count="0"/>
+        <line num="2" type="stmt" count="0"/>
+        <line num="3" type="stmt" count="0"/>
+        <line num="4" type="stmt" count="0"/>
+        <line num="5" type="stmt" count="0"/>
+        <line num="6" type="stmt" count="0"/>
+        <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+    </package>
+    <file name="C:\Users\Harshak-PC\Desktop\unit\tests\EmailTest.php">
+      <class name="EmailTest" namespace="global">
+        <metrics complexity="4" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="7" elements="20" coveredelements="8"/>
+      </class>
+      <line num="8" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="10" type="stmt" count="1"/>
+      <line num="11" type="stmt" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="17" type="method" name="testCannotBeCreatedFromInvalidEmailAddress" visibility="public" complexity="1" crap="1.04" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="27" type="method" name="testCanBeUsedAsString" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="38" type="method" name="validEmail" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <metrics loc="44" ncloc="38" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="7" elements="20" coveredelements="8"/>
+    </file>
+    <file name="C:\Users\Harshak-PC\Desktop\unit\tests\PassTest.php">
+      <class name="PassTest" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+      </class>
+      <line num="9" type="method" name="testCanBeCreatedFromValidEmailAddress" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="11" type="stmt" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <metrics loc="17" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+    </file>
+    <metrics files="14" loc="265" ncloc="207" classes="14" methods="17" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="150" coveredstatements="37" elements="167" coveredelements="43"/>
+  </project>
+</coverage>
