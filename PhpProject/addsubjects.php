@@ -63,7 +63,7 @@
 <!--NAVBAR SECTION END-->
 <br>
 
-<div align="center" style="margin-top:60px">
+<div  style="margin-top:60px">
     <form name="import" method="post" enctype="multipart/form-data">
         <input type="file" name="file"/>
         <input type="submit" name="subjectexcel" id="subjectexcel" class="btn btn-info btn-lg" value="IMPORT EXCEL"/>
@@ -85,14 +85,15 @@
                 if ($code == "" || $code == "Subject Code") {
                     continue;
                 }
+                $qq=  "INSERT INTO subjects VALUES ('$code','$name','$type','$semester','$department',0,'','','')";
                 $q = mysqli_query($conn,
-                    "INSERT INTO subjects VALUES ('$code','$name','$type','$semester','$department',0,'','','')");
+                   $qq);
             }
         }
     }
     ?>
 </div>
-<div align="center" style="margin-top: 20px">
+<div  style="margin-top: 20px">
 
     <button id="subjectmanual" class="btn btn-success btn-lg">ADD SUBJECT</button>
 </div>
@@ -150,7 +151,7 @@
                             <option value="Mechanical Engg.">Mechanical Engg.</option>
                         </select>
                     </div>
-                    <div align="right" class="form-group">
+                    <div  class="form-group">
                         <input type="submit" class="btn btn-default" name="ADD" value="ADD">
                     </div>
                 </form>
@@ -249,17 +250,18 @@
     <table id=subjectstable style="margin-left: 90px">
         <caption><strong> Subject's Information</strong></caption>
         <tr>
-            <th id="code" width="150">Code</th>
-            <th id="title" width=300>Title</th>
-            <th id="course" width=150>Course Type</th>
-            <th id="semester" width="150">Semester</th>
-            <th id="department" width="350">Department</th>
-            <th id="action" width="40">Action</th>
+            <th id="code">Code</th>
+            <th id="title" >Title</th>
+            <th id="course" >Course Type</th>
+            <th id="semester" >Semester</th>
+            <th id="department" >Department</th>
+            <th id="action" >Action</th>
         </tr>
         <?php
         include 'connection.php';
+        $q1 = "SELECT * FROM subjects ORDER BY subject_code ASC ";
         $q = mysqli_query($conn,
-            "SELECT * FROM subjects ORDER BY subject_code ASC ");
+           $q1 );
         while ($row = mysqli_fetch_assoc($q)) {
             echo "<tr><td>{$row['subject_code']}</td>
                     <td>{$row['subject_name']}</td>
