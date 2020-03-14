@@ -162,15 +162,15 @@ include('connection.php');
                    
                 </strong></caption>
             <tr>
-                <th style="text-align:center">WEEKDAYS</th>
-                <th style="text-align:center">8:45-9:45</th>
-                <th style="text-align:center">9:45-10:45</th>
-                <th style="text-align:center">10:45-11:00</th>
-                <th style="text-align:center">11:00-12:00</th>
-                <th style="text-align:center">12:00-1:00</th>
-                <th style="text-align:center">1:00-2:30</th>
-                <th style="text-align:center">2:00-3:00</th>
-                <th style="text-align:center">3:00-4:00</th>
+                <th id = "null" style="text-align:center">WEEKDAYS</th>
+                <th id = "null" style="text-align:center">8:45-9:45</th>
+                <th id = "null" style="text-align:center">9:45-10:45</th>
+                <th id = "null" style="text-align:center">10:45-11:00</th>
+                <th id = "null" style="text-align:center">11:00-12:00</th>
+                <th id = "null" style="text-align:center">12:00-1:00</th>
+                <th id = "null" style="text-align:center">1:00-2:30</th>
+                <th id = "null" style="text-align:center">2:00-3:00</th>
+                <th id = "null" style="text-align:center">3:00-4:00</th>
 
             </tr>
             <tr>
@@ -349,14 +349,14 @@ include('connection.php');
                     ?>
                 </strong></caption>
             <tr>
-                <th style="text-align:center">WEEKDAYS</th>
-                <th style="text-align:center">8:00-8:50</th>
-                <th style="text-align:center">8:55-9:45</th>
-                <th style="text-align:center">9:50-10:40</th>
-                <th style="text-align:center">10:45-11:35</th>
-                <th style="text-align:center">11:40-12:30</th>
-                <th style="text-align:center">12:30-1:30</th>
-                <th style="text-align:center">1:30-4:00</th>
+                <th id = "null" style="text-align:center">WEEKDAYS</th>
+                <th id = "null" style="text-align:center">8:00-8:50</th>
+                <th id = "null" style="text-align:center">8:55-9:45</th>
+                <th id = "null" style="text-align:center">9:50-10:40</th>
+                <th id = "null" style="text-align:center">10:45-11:35</th>
+                <th id = "null" style="text-align:center">11:40-12:30</th>
+                <th id = "null" style="text-align:center">12:30-1:30</th>
+                <th id = "null" style="text-align:center">1:30-4:00</th>
             </tr>
             <tr>
                 <?php
