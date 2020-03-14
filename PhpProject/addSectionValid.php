@@ -11,8 +11,10 @@ if (isset($_POST['SN']) && isset($_POST['SS']) ) {
     echo "<script type='text/javascript'>alert('$message');</script>";
     die();
 }
-$q = mysqli_query($conn, "INSERT INTO sections (sec_name ,sec_strength,class_name ) VALUES ('$sname','$spop','$classroom_no')");
-$qq = mysqli_query($conn, "UPDATE classrooms SET sec_name= '$sname' WHERE classrooms.croom_no='$classroom_no'");
+$qs="INSERT INTO sections (sec_name ,sec_strength,class_name ) VALUES ('$sname','$spop','$classroom_no')";
+$q = mysqli_query($conn, $qs);
+$qqs = "UPDATE classrooms SET sec_name= '$sname' WHERE classrooms.croom_no='$classroom_no'";
+$qq = mysqli_query($conn, $qqs);
 
 $sql = "CREATE TABLE " . $sname . " (
 dayid VARCHAR(10) PRIMARY KEY,
