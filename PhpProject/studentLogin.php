@@ -8,12 +8,12 @@ if (isset($_POST['sroll']) && isset($_POST['spassword'])) {
 } else {
     die();
 }
-$q = mysqli_query($conn, "SELECT * FROM student_info WHERE sroll = '$id' and spassword = '$password' ");
+$q1 = "SELECT * FROM student_info WHERE sroll = '$id' and spassword = '$password' ";
+$q = mysqli_query($conn, $q1);
 if (mysqli_num_rows($q) == 1) {
     $row = mysqli_fetch_array($q);
     $_SESSION['sid'] = $row['sid'];
     
-    // $_SESSION['loggedin_id'] = $fac;
     header("Location:dashbord_student.php");
 } else {
     $message = "Username and/or Password incorrect.\\nTry again.";

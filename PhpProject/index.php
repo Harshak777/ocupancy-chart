@@ -1,8 +1,5 @@
 <?php
-if (isset($_GET['generated']) && $_GET['generated'] == "false") {
-    unset($_GET['generated']);
-    echo '<script>alert("Timetable not generated yet!!");</script>';
-}
+include 'connection.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -74,8 +74,8 @@ $tid=$_SESSION['tid'];
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
-          <li><a href="index.php"><?php echo $_SESSION['loggedin_name'];  //echo getLoggedMemberID();// name of the login ?></a></li>
+         
+          <li><a href="index.php"><?php echo $_SESSION['loggedin_name'];  ?></a></li>
              <em class="fa fa-fw fa-sign-out"><em><li>Logout</li></li> 
         </li>
       </ul>
@@ -100,7 +100,7 @@ $tid=$_SESSION['tid'];
 
 
   
-    <div align="center">
+    <div >
     <br>
     <style>
         table {
@@ -127,14 +127,14 @@ $tid=$_SESSION['tid'];
         
         <tr>
 
-            <th id= "null" width="100">Room No</th>
-            <th id= "null" width="100">Capacity</th>
-            <th id= "null" width="100">Power Points</th>
-            <th id= "null" width="100">Projector Availability</th>
-            <th id= "null" width="100">Smart Class</th>
-            <th id= "null" width="100">Speaker</th>
-            <th id= "null" width="100">Section Alloted</th>
-            <th id= "null" width="60">Action</th>
+            <th id= "null"  >Room No</th>
+            <th id= "null"  >Capacity</th>
+            <th id= "null"  >Power Points</th>
+            <th id= "null"  >Projector Availability</th>
+            <th id= "null"  >Smart Class</th>
+            <th id= "null"  >Speaker</th>
+            <th id= "null"  >Section Alloted</th>
+            <th id= "null" >Action</th>
         </tr>
         <?php
         include 'connection.php';
@@ -165,24 +165,6 @@ $tid=$_SESSION['tid'];
 
 
 
-     <!-- center area ends -->
-      <!-- <?php checkdetailsStudent(); ?>  -->
-
-      <!-- <div class="row">
-
-        <div class="col-12">
-          <?php //include '.php'; ?>
-
-
-           <?php //include 'main.php'; ?> 
-        </div>
-      </div> -->
-    </div>
-
-    <!-- /.container-fluid-->
-    
-
-    <!-- /.content-wrapper-->
     
     <footer class="sticky-footer">
       <div class="container">
@@ -191,12 +173,10 @@ $tid=$_SESSION['tid'];
         </div>
       </div>
     </footer>
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <em class="fa fa-angle-up"><em>
     </a>
 
-    <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
       <div class="modal-dialog" role="document">
@@ -228,7 +208,6 @@ $tid=$_SESSION['tid'];
               </ul>
               <?php } ?>
               <?php } ?>
-            <!--login/logout area ends-->
           </div>
 
           <div class="modal-footer">
