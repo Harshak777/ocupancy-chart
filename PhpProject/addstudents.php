@@ -6,15 +6,15 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <title>TimeTable Management System</title>
-    <!-- BOOTSTRAP CORE STYLE CSS -->
+    
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-    <!-- FONT AWESOME CSS -->
+    
     <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
-    <!-- FLEXSLIDER CSS -->
+    
     <link href="assets/css/flexslider.css" rel="stylesheet"/>
-    <!-- CUSTOM STYLE CSS -->
+    
     <link href="assets/css/style.css" rel="stylesheet"/>
-    <!-- Google	Fonts -->
+    
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'/>
 </head>
 <body>
@@ -60,7 +60,7 @@
         </div>
     </div>
 </div>
-<!--NAVBAR SECTION END-->
+
 <br>
 
 <div align="center" style="margin-top:80px">
@@ -69,14 +69,14 @@
 
 <div id="myModal" class="modal">
 
-    <!-- Modal content -->
+    
     <div class="modal-content"  >
         <div class="modal-header">
             <span class="close">&times</span>
             <h2 id="popupHead">Add Student</h2>
         </div>
         <div class="modal-body" id="EnterStudent">
-            <!--Admin Login Form-->
+            
             <div style="display:none" id="addstudentForm">
                 <form action="addstudentFromValidation.php" method="POST">
                     <div class="form-group">
@@ -160,36 +160,36 @@
 </div>
 
 <script>
-    // Get the modal
+    
     var modal = document.getElementById('myModal');
 
-    // Get the button that opens the modal
+    
     var addteacherBtn = document.getElementById("studentmanual");
     var heading = document.getElementById("popupHead");
     var facultyForm = document.getElementById("addstudentForm");
-    // Get the <span> element that closes the modal
+    
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal
+   
 
     addteacherBtn.onclick = function () {
         modal.style.display = "block";
-        //heading.innerHTML = "Faculty Login";
+        
         facultyForm.style.display = "block";
-        //adminForm.style.display = "none";
+        
 
 
     }
 
-    // When the user clicks on <span> (x), close the modal
+    
     span.onclick = function () {
         modal.style.display = "none";
-        //adminForm.style.display = "none";
+        
         facultyForm.style.display = "none";
 
     }
 
-    // When the user clicks anywhere outside of the modal, close it
+    
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -226,7 +226,7 @@
             var rows = table.getElementsByTagName("tr");
             for (i = 0; i < rows.length; i++) {
                 var currentRow = table.rows[i];
-                //var b = currentRow.getElementsByTagName("td")[0];
+                
                 var createDeleteHandler =
                     function (row) {
                         return function () {
@@ -288,24 +288,17 @@
 
 
 </div>
-<!--HOME SECTION END-->
 
-<!--<div id="footer">
-    <!--  &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
--->
-<!-- FOOTER SECTION END-->
-
-<!--  Jquery Core Script -->
 <script src="assets/js/jquery-1.10.2.js"></script>
-<!--  Core Bootstrap Script -->
+
 <script src="assets/js/bootstrap.js"></script>
-<!--  Flexslider Scripts -->
+
 <script src="assets/js/jquery.flexslider.js"></script>
-<!--  Scrolling Reveal Script -->
+
 <script src="assets/js/scrollReveal.js"></script>
-<!--  Scroll Scripts -->
+
 <script src="assets/js/jquery.easing.min.js"></script>
-<!--  Custom Scripts -->
+
 <script src="assets/js/custom.js"></script>
 </body>
 </html>

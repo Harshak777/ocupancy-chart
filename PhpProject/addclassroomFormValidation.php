@@ -1,30 +1,5 @@
 <?php
 
-// include 'connection.php';
-// if (isset($_POST['CN'])) {
-//     $name = $_POST['CN'];
-//     //  $message = "nTry again.";
-//     // echo "<script type='text/javascript'>alert('$message');</script>";
-// } else {
-//     $message = "dead.";
-//     echo "<script type='text/javascript'>alert('$message');</script>";
-//     die();
-// }
-// $q = mysqli_query($conn, "INSERT INTO classrooms VALUES ('$name',0)");
-// if ($q) {
-//     $message = "Classroom added.";
-//     echo "<script type='text/javascript'>alert('$message');</script>";
-//     header("Location:addclassrooms.php");
-// } else {
-//     $message = "Username and/or Password incorrect.\\nTry again.";
-//     echo "<script type='text/javascript'>alert('$message');</script>";
-//     // header("Location:index.html");
-
-// }
-?>
-
-<?php
-
 include 'connection.php';
 if (isset($_POST['CN']) && isset($_POST['CS']) && isset($_POST['CPP']) && isset($_POST['CP']) && isset($_POST['SC']) && isset($_POST['SK']) ) {
     $roomno = $_POST['CN'];
@@ -33,11 +8,7 @@ if (isset($_POST['CN']) && isset($_POST['CS']) && isset($_POST['CPP']) && isset(
     $projector = $_POST['CP'];
     $smartclass = $_POST['SC'];
     $speaker = $_POST['SK'];
-    // $section = $_POST['SEC'];
-    // $password = $_POST['TPP'];
-    // $address = $_POST['TA'];
-    //  $message = "nTry again.";
-    // echo "<script type='text/javascript'>alert('$message');</script>";
+
 } else {
     $message = "dead.";
     echo "<script type='text/javascript'>alert('$message');</script>";
@@ -71,7 +42,7 @@ if ($q) {
 } else {
     $message = "incorrect InFo.\\nTry again.";
     echo "<script type='text/javascript'>alert('$message');</script>";
-    // header("Location:index.php");
+
 
 }
 

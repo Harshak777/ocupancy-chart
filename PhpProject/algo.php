@@ -81,13 +81,13 @@ for ($I = 0; $I < $subjects_count * 4; $I++) {
         if ($j % 6 == 0)
             $r++;
         if (isset($subjectslots[$sem][$r % 6][$j % 5])) {
-            //check if subjectslot is empty
+          
             continue;
         } else if (isset($teachers[$tindex]->days[$sem % 2][$r % 6][$j % 5])) {
-            //check if subject teacher is free
+            
             continue;
         } else {
-            //check if existing in same day
+           
             $already = false;
             for ($z = 0; $z < 5; $z++) {
                 if (isset($subjectslots[$sem][$r % 6][$z])) {
@@ -190,7 +190,7 @@ for ($I = 0; $I < 2 * $count; $I++) {
         }
     }
 
-    //checking if all three teachers are free
+    
     for ($j = 0; $j < 6; $j++) {
         if (isset($subjectslots[$sem][$j][5])) {
             continue;
@@ -199,7 +199,7 @@ for ($I = 0; $I < 2 * $count; $I++) {
         ) {
             continue;
         } else {
-            //if free then assign practical
+            
             $practicals[$i]->classes++;
             $subjectslots[$sem][$j][5] = $practicals[$i]->code;
             $aliasslots[$sem][$j][5][0] = $practicals[$i]->alias;

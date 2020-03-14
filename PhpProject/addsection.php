@@ -6,15 +6,15 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <title>TimeTable Management System</title>
-    <!-- BOOTSTRAP CORE STYLE CSS -->
+    
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-    <!-- FONT AWESOME CSS -->
+    
     <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
-    <!-- FLEXSLIDER CSS -->
+    
     <link href="assets/css/flexslider.css" rel="stylesheet"/>
-    <!-- CUSTOM STYLE CSS -->
+   
     <link href="assets/css/style.css" rel="stylesheet"/>
-    <!-- Google	Fonts -->
+    
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'/>
 </head>
 <body>
@@ -60,7 +60,7 @@
         </div>
     </div>
 </div>
-<!--NAVBAR SECTION END-->
+
 <br>
 
 <div align="center" style="margin-top:80px">
@@ -69,48 +69,7 @@
         <input type="submit" name="teacherexcel" id="teacherexcel" class="btn btn-info btn-lg" value="IMPORT EXCEL"/>
     </form>
     <?php
-    // if (isset($_POST['teacherexcel'])) {
-    //     if (empty($_FILES['file']['tmp_name'])) {
-    //         echo '<script>alert("Select a file first! ");</script>';
-    //     } else {
-    //         $file = $_FILES['file']['tmp_name'];
-    //         $handle = fopen($file, 'r');
-    //         $headings = true;
-    //         while (!feof($handle)) {
-    //             $filesop = fgetcsv($handle, 1000);
 
-    //             $facno = $filesop[0];
-    //             $name = $filesop[1];
-    //             $alias = $filesop[2];
-    //             $designation = $filesop[3];
-    //             $contact = $filesop[4];
-    //             $email = $filesop[5];
-    //             if ($facno == "" || $facno == "Faculty No.") {
-    //                 continue;
-    //             }
-    //             $q = mysqli_query($conn,
-    //                 "INSERT INTO teachers VALUES ('$facno','$name','$alias','$designation','$contact','$email')");
-    //             if ($q) {
-    //                 $sql = "CREATE TABLE " . $facno . " (
-    //             day VARCHAR(10) PRIMARY KEY, 
-    //             period1 VARCHAR(30),
-    //             period2 VARCHAR(30),
-    //             period3 VARCHAR(30),
-    //             period4 VARCHAR(30),
-    //             period5 VARCHAR(30),
-    //             period6 VARCHAR(30)
-    //             )";
-    //                 mysqli_query($conn, $sql);
-    //                 $days = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday');
-    //                 for ($i = 0; $i < 6; $i++) {
-    //                     $day = $days[$i];
-    //                     $sql = "INSERT into " . $facno . " VALUES('$day','','','','','','')";
-    //                     mysqli_query($conn, $sql);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
     ?>
 </div>
 <div align="center" style="margin-top:20px">
@@ -119,14 +78,14 @@
 
 <div id="myModal" class="modal">
 
-    <!-- Modal content -->
+    
     <div class="modal-content" style="margin-top: -60px">
         <div class="modal-header">
             <span class="close">&times</span>
             <h2 id="popupHead">Add Section</h2>
         </div>
         <div class="modal-body" id="EnterTeacher">
-            <!--Admin Login Form-->
+            
             <div style="display:none" id="addTeacherForm">
                 <form action="addSectionValid.php" method="POST">
                     
@@ -188,31 +147,31 @@
 </div>
 
 <script>
-    // Get the modal
+    
     var modal = document.getElementById('myModal');
 
-    // Get the button that opens the modal
+    
     var addteacherBtn = document.getElementById("teachermanual");
     var heading = document.getElementById("popupHead");
     var facultyForm = document.getElementById("addTeacherForm");
-    // Get the <span> element that closes the modal
+    
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal
+    
 
     addteacherBtn.onclick = function () {
         modal.style.display = "block";
-        //heading.innerHTML = "Faculty Login";
+        
         facultyForm.style.display = "block";
-        //adminForm.style.display = "none";
+        
 
 
     }
 
-    // When the user clicks on <span> (x), close the modal
+    
     span.onclick = function () {
         modal.style.display = "none";
-        //adminForm.style.display = "none";
+        
         facultyForm.style.display = "none";
 
     }
@@ -254,7 +213,7 @@
             var rows = table.getElementsByTagName("tr");
             for (i = 0; i < rows.length; i++) {
                 var currentRow = table.rows[i];
-                //var b = currentRow.getElementsByTagName("td")[0];
+               
                 var createDeleteHandler =
                     function (row) {
                         return function () {
@@ -302,24 +261,19 @@
     </table>
 
 </div>
-<!--HOME SECTION END-->
 
-<!--<div id="footer">
-    <!--  &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
--->
-<!-- FOOTER SECTION END-->
 
-<!--  Jquery Core Script -->
+
 <script src="assets/js/jquery-1.10.2.js"></script>
-<!--  Core Bootstrap Script -->
+
 <script src="assets/js/bootstrap.js"></script>
-<!--  Flexslider Scripts -->
+
 <script src="assets/js/jquery.flexslider.js"></script>
-<!--  Scrolling Reveal Script -->
+
 <script src="assets/js/scrollReveal.js"></script>
-<!--  Scroll Scripts -->
+
 <script src="assets/js/jquery.easing.min.js"></script>
-<!--  Custom Scripts -->
+
 <script src="assets/js/custom.js"></script>
 </body>
 </html>

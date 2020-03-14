@@ -13,8 +13,6 @@ if (isset($_POST['sname']) && isset($_POST['snumber']) && isset($_POST['sroll'])
     $ssem = $_POST['ssem'];
     $ssec = $_POST['ssec'];
 
-    //  $message = "nTry again.";
-    // echo "<script type='text/javascript'>alert('$message');</script>";
 } else {
     $message = "dead.";
     echo "<script type='text/javascript'>alert('$message');</script>";
@@ -30,7 +28,7 @@ if ($q) {
 } else {
     $message = "Enter Valid Info.\\nTry again.";
     echo "<script type='text/javascript'>alert('$message');</script>";
-    // header("Location:index.php");
+
 
 }
 

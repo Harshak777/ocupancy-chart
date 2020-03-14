@@ -6,14 +6,6 @@ if (isset($_POST['SN']) && isset($_POST['SS']) ) {
     $spop = $_POST['SS'];
     $classroom_no = $_POST['CR'];
 
-    // $designation = $_POST['TD'];
-    // $alias = $_POST['AL'];
-    // $contact = $_POST['TP'];
-    // $email = $_POST['TE'];
-    // $password = $_POST['TPP'];
-    // $address = $_POST['TA'];
-    //  $message = "nTry again.";
-    // echo "<script type='text/javascript'>alert('$message');</script>";
 } else {
     $message = "dead.";
     echo "<script type='text/javascript'>alert('$message');</script>";
@@ -46,7 +38,6 @@ if ($qq) {
 } else {
     $message = "Section Details Incorrect.\\nTry again.";
     echo "<script type='text/javascript'>alert('$message');</script>";
-    // header("Location:index.php");
 
 }
 if ($q) {
@@ -56,7 +47,6 @@ if ($q) {
 } else {
     $message = "Section Details Incorrect.\\nTry again.";
     echo "<script type='text/javascript'>alert('$message');</script>";
-    // header("Location:index.php");
 
 }
 

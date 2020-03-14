@@ -6,8 +6,7 @@ if (isset($_POST['select_classroom']) && isset($_POST['select_day']) && isset($_
     $select_day = $_POST['select_day'];
     $select_period = $_POST['select_period'];
    
-    //  $message = "nTry again.";
-    // echo "<script type='text/javascript'>alert('$message');</script>";
+
 } else {
     $message = "dead.";
     echo "<script type='text/javascript'>alert('$message');</script>";
@@ -39,7 +38,7 @@ $row = mysqli_fetch_array($q1);
         $run_query=mysqli_query($conn,$sql);
         $row=mysqli_fetch_array($run_query);
         $s_name = $row['sec_name'];
-        //$qs = mysqli_query($conn, "UPDATE student_info SET snotify = 'Timetable Updated <br> New Period Added <br> Check Your Room TT' WHERE ssec in (SELECT sec_name FROM sections WHERE class_name = '$select_classroom')");
+        
         $qs1 = mysqli_query($conn, "INSERT INTO notification (sec_name,croom_no,notify) VALUES('$s_name','$select_classroom','Timetable Updated<br>New Period Added<br>Check Your Room TT')");
          
         $message = "Allotted";
@@ -48,7 +47,7 @@ $row = mysqli_fetch_array($q1);
      } else {
          $message = "Not Allotted";
          echo "<script type='text/javascript'>alert('$message');</script>";
-         //header("Location:facultypage.php");
+    
 
      }
     
@@ -56,7 +55,7 @@ $row = mysqli_fetch_array($q1);
  {
      $message = "Period already occupied";
      echo "<script type='text/javascript'>alert('$message');</script>";
-     //header("Location:facultypage.php");
+   
  }
 
 ?>
