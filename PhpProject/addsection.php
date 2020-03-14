@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -235,12 +235,12 @@
     <table id="sectiontable" style="margin-left: 80px">
         <caption><strong>Section Information </strong></caption>
         <tr>
-            <th width="130">Section Name</th>
-            <th width=290>Section Strength</th>
+            <th id="section" width="130">Section Name</th>
+            <th id="section" width=290>Section Strength</th>
            
-            <th width="190">Class Room No </th>
+            <th id="class room" width="190">Class Room No </th>
             
-            <th width="40">Action</th>
+            <th id="action" width="40">Action</th>
         </tr>
         <tbody>
         <?php

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -123,14 +123,14 @@
         <caption><strong>ADDED CLASSROOMS</strong></caption>
         <tr>
 
-            <th width="100">Room No</th>
-            <th width="100">Capacity</th>
-            <th width="100">Power Points</th>
-            <th width="100">Projector Availability</th>
-            <th width="100">Smart Class</th>
-            <th width="100">Speaker</th>
-            <th width="100">Section Alloted</th>
-            <th width="60">Action</th>
+            <th id="room" width="100">Room No</th>
+            <th id="capacity" width="100">Capacity</th>
+            <th id="power" width="100">Power Points</th>
+            <th id="project" width="100">Projector Availability</th>
+            <th id="smart" width="100">Smart Class</th>
+            <th id="speaker" width="100">Speaker</th>
+            <th id="section" width="100">Section Alloted</th>
+            <th id="action" width="60">Action</th>
         </tr>
         <tbody>
         <?php

@@ -1,11 +1,5 @@
-/**
-* Created by PhpStorm.
-* User: MSaqib
-* Date: 17-11-2016
-* Time: 18:33
-*/
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -220,15 +214,15 @@ if (isset($_GET['name'])) {
 <table id=allotedpracticalstable>
     <caption><strong>PRACTICAL COURSES ALLOTMENT</strong></caption>
     <tr>
-        <th width="130">Subject Code</th>
-        <th width=200>Subject Title</th>
-        <th width="120">Faculty No</th>
-        <th width="300">Teacher's Name</th>
-        <th width="120">Faculty No</th>
-        <th width="300">Teacher's Name</th>
-        <th width="120">Faculty No</th>
-        <th width="300">Teacher's Name</th>
-        <th width="40">Action</th>
+        <th id="subject code" width="130">Subject Code</th>
+        <th id="subject title" width=200>Subject Title</th>
+        <th id="faculty no" width="120">Faculty No</th>
+        <th id="teachers" width="300">Teacher's Name</th>
+        <th id="faculty no" width="120">Faculty No</th>
+        <th id="teachername" width="300">Teacher's Name</th>
+        <th id="faculty no" width="120">Faculty No</th>
+        <th id="teachersname" width="300">Teacher's Name</th>
+        <th id="action" width="40">Action</th>
     </tr>
     <tbody>
     <?php

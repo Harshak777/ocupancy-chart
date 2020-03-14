@@ -46,19 +46,19 @@ $tid=$_SESSION['tid'];
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="faculty_edit.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"></em>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="facultypage.php">
-            <i class="fa fa-table"></i>
+            <em class="fa fa-table"></em>
             <span class="nav-link-text">My Timetable</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="select_classroom.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"></em>
             <span class="nav-link-text">Select class</span>
           </a>
         </li>
@@ -67,7 +67,7 @@ $tid=$_SESSION['tid'];
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+            <em class="fa fa-fw fa-angle-left"></em>
           </a>
         </li>
       </ul>
@@ -76,7 +76,7 @@ $tid=$_SESSION['tid'];
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
           <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
           <li><a href="index.php"><?php echo $_SESSION['loggedin_name'];  //echo getLoggedMemberID();// name of the login ?></a></li>
-             <i class="fa fa-fw fa-sign-out"></i><li>Logout</li></li> 
+             <em class="fa fa-fw fa-sign-out"></em><li>Logout</li></li> 
         </li>
       </ul>
     </div>
@@ -102,7 +102,7 @@ $tid=$_SESSION['tid'];
   <div class="panel panel-info">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<i class="glyphicon glyphicon-info-sign"></i>
+						<em class="glyphicon glyphicon-info-sign"></em>
 						<!-- <?php echo '<h3>Your info</h3>' ?> -->
 					</h3>
 				</div>
@@ -146,7 +146,7 @@ $tid=$_SESSION['tid'];
 
 						<div class="row">
 							<div class="col-md-4 col-md-offset-4">
-								<button id="update-profile" class="btn btn-success btn-block" type="button"><i class="glyphicon glyphicon-ok"></i> <?php echo 'Update profile' ?></button>
+								<button id="update-profile" class="btn btn-success btn-block" type="button"><em class="glyphicon glyphicon-ok"></em> <?php echo 'Update profile' ?></button>
 							</div>
 						</div>
 					</fieldset>
@@ -192,7 +192,7 @@ $tid=$_SESSION['tid'];
     </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
+      <em class="fa fa-angle-up"></em>
     </a>
 
     <!-- Logout Modal-->
@@ -209,7 +209,7 @@ $tid=$_SESSION['tid'];
             </button>
           </div>
           <div class="modal-body">Here are some quick options:
-            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><i class="fa fa-user"></i> <strong>My profile</strong></a>
+            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><em class="fa fa-user"></em> <strong>My profile</strong></a>
                <?php if(getLoggedAdmin()){ ?>
                <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><i class="fa fa-cog"></i> <strong><?php echo $Translation['admin area']; ?></strong></a>
                <?php } ?>

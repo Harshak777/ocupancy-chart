@@ -49,25 +49,25 @@ $sid=$_SESSION['sid'];
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="student_edit.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"></em>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="dashbord_student.php">
-            <i class="fa fa-table"></i>
+            <em class="fa fa-table"></em>
             <span class="nav-link-text">My Section Timetable</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="dashbord_student_class.php">
-            <i class="fa fa-table"></i>
+            <em class="fa fa-table"></em>
             <span class="nav-link-text">My Classroom Timetable</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="notify.php">
-          <i class="fa fa-fw fa-whatsapp"></i>
+          <em class="fa fa-fw fa-whatsapp"></em>
             <span class="nav-link-text">Notifications</span>
           </a>
         </li>
@@ -76,7 +76,7 @@ $sid=$_SESSION['sid'];
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+            <em class="fa fa-fw fa-angle-left"></em>
           </a>
         </li>
       </ul>
@@ -85,7 +85,7 @@ $sid=$_SESSION['sid'];
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
           <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
           <li><a href="index.php"><?php echo $name;  //echo getLoggedMemberID();// name of the login ?></a></li>
-             <i class="fa fa-fw fa-sign-out"></i><li>Logout</li></li> 
+             <em class="fa fa-fw fa-sign-out"></em><li>Logout</li></li> 
         </li>
       </ul>
     </div>
@@ -204,7 +204,7 @@ $sid=$_SESSION['sid'];
     </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
+      <em class="fa fa-angle-up"></em>
     </a>
 
     <!-- Logout Modal-->
@@ -221,9 +221,9 @@ $sid=$_SESSION['sid'];
             </button>
           </div>
           <div class="modal-body">Here are some quick options:
-            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><i class="fa fa-user"></i> <strong>My profile</strong></a>
+            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><em class="fa fa-user"></em> <strong>My profile</strong></a>
                <?php if(getLoggedAdmin()){ ?>
-               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><i class="fa fa-cog"></i> <strong><?php echo $Translation['admin area']; ?></strong></a>
+               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><em class="fa fa-cog"></em> <strong><?php echo $Translation['admin area']; ?></strong></a>
                <?php } ?>
                <?php if(!$_GET['signIn'] && !$_GET['loginFailed']){ ?>
                <?php if(getLoggedMemberID() == $adminConfig['anonymousMember']){ ?>

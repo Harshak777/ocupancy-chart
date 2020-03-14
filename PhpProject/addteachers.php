@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -276,13 +276,13 @@
     <table id=teacherstable style="margin-left: 80px">
         <caption><strong>Teacher's Information </strong></caption>
         <tr>
-            <th width="130">Faculty No</th>
-            <th width=290>Name</th>
-            <th width=50>Alias</th>
-            <th width="190">Designation</th>
-            <th width="190">Contact No.</th>
-            <th width="290">Email ID</th>
-            <th width="40">Action</th>
+            <th id="faculty" width="130">Faculty No</th>
+            <th id="name" width=290>Name</th>
+            <th id="alias" width=50>Alias</th>
+            <th id="designation" width="190">Designation</th>
+            <th id="contact" width="190">Contact No.</th>
+            <th id="email" width="290">Email ID</th>
+            <th id="action" width="40">Action</th>
         </tr>
         <tbody>
         <?php

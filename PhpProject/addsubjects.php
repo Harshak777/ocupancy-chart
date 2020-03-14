@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -249,12 +249,12 @@
     <table id=subjectstable style="margin-left: 90px">
         <caption><strong> Subject's Information</strong></caption>
         <tr>
-            <th width="150">Code</th>
-            <th width=300>Title</th>
-            <th width=150>Course Type</th>
-            <th width="150">Semester</th>
-            <th width="350">Department</th>
-            <th width="40">Action</th>
+            <th id="code" width="150">Code</th>
+            <th id="title" width=300>Title</th>
+            <th id="course" width=150>Course Type</th>
+            <th id="semester" width="150">Semester</th>
+            <th id="department" width="350">Department</th>
+            <th id="action" width="40">Action</th>
         </tr>
         <?php
         include 'connection.php';

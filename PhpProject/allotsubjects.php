@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -159,11 +159,11 @@
 <table id=allotedsubjectstable>
     <caption><strong>THEORY COURSES ALLOTMENT</strong></caption>
     <tr>
-        <th width="150">Subject Code</th>
-        <th width=420>Subject Title</th>
-        <th width="170">Faculty No</th>
-        <th width="330">Teacher's Name</th>
-        <th width="40">Action</th>
+        <th id="subjectcode" width="150">Subject Code</th>
+        <th id="subjecttitle" width=420>Subject Title</th>
+        <th id="fscultyno" width="170">Faculty No</th>
+        <th id="teachersname" width="330">Teacher's Name</th>
+        <th id="action" width="40">Action</th>
     </tr>
     <tbody>
     <?php

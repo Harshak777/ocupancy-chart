@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -249,16 +249,16 @@
     <table id="studentstable" style="margin-left: 80px">
         <caption><strong>Student Information </strong></caption>
         <tr>
-            <th width=100>Student Roll</th>
-            <th width=100>StudentName</th>
-            <th width=50>Student Branch</th>
-            <th width="100">Date of Birth</th>
-            <th width="100">Contact No.</th>
-            <th width="100">Email ID</th>
-            <th width="50   ">Section</th>
-            <th width="40">Semester</th>
-            <th width="100">Address</th>
-            <th width="40">Action</th>
+            <th id="student roll" width=100>Student Roll</th>
+            <th id="studentname" width=100>StudentName</th>
+            <th id="student branch" width=50>Student Branch</th>
+            <th id="dateofbirth" width="100">Date of Birth</th>
+            <th id="contact" width="100">Contact No.</th>
+            <th id="email" width="100">Email ID</th>
+            <th id="section" width="50   ">Section</th>
+            <th id="semester" width="40">Semester</th>
+            <th id="address" width="100">Address</th>
+            <th id="action" width="40">Action</th>
         </tr>
         <tbody>
         <?php

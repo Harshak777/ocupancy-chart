@@ -1,11 +1,5 @@
-/**
-* Created by PhpStorm.
-* User: MSaqib
-* Date: 17-11-2016
-* Time: 19:50
-*/
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -163,9 +157,9 @@ if (isset($_POST['in_class'])) {
     <table id=allotedclassroomstable>
         <caption><strong>CLASSROOMS ALLOTMENT</strong></caption>
         <tr>
-            <th width="250">Classroom</th>
-            <th width="400">Alloted To</th>
-            <th width="60">Action</th>
+            <th id="classroom" width="250">Classroom</th>
+            <th id="alloted" width="400">Alloted To</th>
+            <th id="action" width="60">Action</th>
         </tr>
         <tbody>
         <?php

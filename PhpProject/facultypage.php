@@ -49,19 +49,19 @@ include('connection.php');
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="faculty_edit.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"></em>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="facultypage.php">
-            <i class="fa fa-table"></i>
+            <em class="fa fa-table"></em>
             <span class="nav-link-text">My Timetable</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="select_classroom.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"></em>
             <span class="nav-link-text">Select class</span>
           </a>
         </li>
@@ -70,7 +70,7 @@ include('connection.php');
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+            <em class="fa fa-fw fa-angle-left"></em>
           </a>
         </li>
       </ul>
@@ -79,9 +79,9 @@ include('connection.php');
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
           <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
           <li><a href="index.php"   style="font-size:18px;"><?php echo $_SESSION['loggedin_name'];  //echo getLoggedMemberID();// name of the login ?></a></li>
-             <i class="fa fa-fw fa-sign-out"   style="font-size:28px;"></i><li style="font-size:18px;">Logout</li></li> <h1>   </h1>
+             <em class="fa fa-fw fa-sign-out"   style="font-size:28px;"></em><li style="font-size:18px;">Logout</li></li> <h1>   </h1>
              <br>
-             <i class="fa fa-bell" style="font-size:28px;color:black"></i>
+             <em class="fa fa-bell" style="font-size:28px;color:black"></em>
         </li>
       </ul>
     </div>
