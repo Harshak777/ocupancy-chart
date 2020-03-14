@@ -2,15 +2,9 @@
 
 <?php
 session_start();
-//  include('studentLogin.php');  
+  
 include('connection.php');
 
-// $sid=$_SESSION['sid'];
-
-//         $sql = "SELECT * FROM student_info WHERE sid='$sid'";
-//         $run_query=mysqli_query($conn,$sql);
-//         $row=mysqli_fetch_array($run_query);
-//         $name=$row['sname'];
 
 
 ?>
@@ -106,7 +100,7 @@ include('connection.php');
 
 
      <form action="facultypage.php" method="post">
-    <div style="margin-top: 100px" align="center">
+    <div style="margin-top: 100px">
         <select name="select_teacher" class="list-group-item">
             <option selected disabled>Select Teacher</option>
             <?php
@@ -121,23 +115,9 @@ include('connection.php');
         </button>
     </div>
 </form>
-<!-- <form action="facultypage.php" method="post">
-    <div align="center" style="margin-top: 10px">
-        <select name="select_semester" class="list-group-item">
-            <option selected disabled>Select Semester</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-        </select>
-        <button type="submit" id="viewsemester" style="margin-top: 5px" class="btn btn-success btn-lg">VIEW TIMETABLE
-        </button>
-    </div>
-</form> -->
+
 <form  action="facultypage.php" method="post">
-<div  align="center" class="form-group">
+<div   class="form-group">
     <label for="class_room_no">Class Room No</label>
         <select name="class_room" class="list-group-item">
             <option selected disabled>Select or View ClassRoom</option>
@@ -231,7 +211,7 @@ include('connection.php');
                         <emnput type="hidden" id="cell_number" class="btn btn-default" name="CN">
 
                     </div>
-                    <div align="right" class="form-group">
+                    <div class="form-group">
 
                         <emnput type="submit" id="submit" class="btn btn-default" name="ADD" value="CHECK">
                     </div>
@@ -328,7 +308,7 @@ include('connection.php');
         }
     </style>
     <div id="TT" style="background-color: #FFFFFF">
-        <table border="2" cellspacing="3" align="center" id="timetable">
+        <table  cellspacing="3"  id="timetable">
             <caption><strong><br><br>
                     <?php
                     if (isset($_POST['select_semester'])) {
@@ -455,11 +435,10 @@ include('connection.php');
 
 
 <form action="allot.php" method="post">
-    <div align="center" style="margin-top: 30px">
+    <div  style="margin-top: 30px">
         <select name="select_classroom" class="list-group-item">
             <option selected disabled>Select Teacher</option>
             <?php
-            include 'connection.php';
 
             $q = mysqli_query($conn,
                 "SELECT * FROM classrooms ");
@@ -522,11 +501,10 @@ include('connection.php');
 
 
 <form action="cancel.php" method="post">
-    <div align="center" style="margin-top: 30px">
+    <div style="margin-top: 30px">
         <select name="select_classroomc" class="list-group-item">
             <option selected disabled>Select Teacher</option>
             <?php
-            include 'connection.php';
 
             $q = mysqli_query($conn,
                 "SELECT * FROM classrooms ");
