@@ -131,7 +131,7 @@ $sid=$_SESSION['sid'];
 
 
 
-    <table id=table>
+    <table aria-describedby="mydesc" id=table>
         
         <tr>
 

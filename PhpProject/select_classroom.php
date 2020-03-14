@@ -123,7 +123,7 @@ $tid=$_SESSION['tid'];
 
 
 
-    <table id=table>
+    <table aria-describedby="mydesc" id=table>
         
         <tr>
 
