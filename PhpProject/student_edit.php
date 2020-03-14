@@ -39,7 +39,7 @@ $sid=$_SESSION['sid'];
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="dashbord_student.php">Student Area</a>
     <a href="/"  id="logo"
-                                                 title="Return to the Amrita Vishwa Vidyapeetham home page"><img
+                                                 title="Return to the Amrita Vishwa Vidyapeetham home page"><emmg
                                         src="assets/img/amrita.jpg" class="img-reponsive"
                                         alt="Amrita Vishwa Vidyapeetham"></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,25 +49,25 @@ $sid=$_SESSION['sid'];
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="student_edit.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <em class="fa fa-fw fa-dashboard"><em>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="dashbord_student.php">
-            <i class="fa fa-table"></i>
+            <em class="fa fa-table"><em>
             <span class="nav-link-text">My Timetable</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="dashbord_student_class.php">
-            <i class="fa fa-table"></i>
+            <em class="fa fa-table"><em>
             <span class="nav-link-text">My Classroom Timetable</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="notify.php">
-          <i class="fa fa-fw fa-whatsapp"></i>
+          <em class="fa fa-fw fa-whatsapp"><em>
             <span class="nav-link-text">Notifications</span>
           </a>
         </li>
@@ -76,7 +76,7 @@ $sid=$_SESSION['sid'];
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+            <em class="fa fa-fw fa-angle-left"><em>
           </a>
         </li>
       </ul>
@@ -85,7 +85,7 @@ $sid=$_SESSION['sid'];
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
           <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
           <li><a href="index.php"><?php echo $name;  //echo getLoggedMemberID();// name of the login ?></a></li>
-             <i class="fa fa-fw fa-sign-out"></i><li>Logout</li></li> 
+             <em class="fa fa-fw fa-sign-out"><em><li>Logout</li></li> 
         </li>
       </ul>
     </div>
@@ -109,7 +109,7 @@ $sid=$_SESSION['sid'];
   <div class="panel panel-info">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<i class="glyphicon glyphicon-info-sign"></i>
+						<em class="glyphicon glyphicon-info-sign"><em>
 						<!-- <?php echo '<h3>Your info</h3>' ?> -->
 					</h3>
 				</div>
@@ -118,43 +118,43 @@ $sid=$_SESSION['sid'];
 					
           <div class="form-group">
 							<label for="name"><?php echo 'Your Name' ?></label>
-							<input type="email" id="email" name="sname" value="<?php echo $row['sname']; ?>" class="form-control">
+							<emnput type="email" id="email" name="sname" value="<?php echo $row['sname']; ?>" class="form-control">
 						</div>
 						<div class="form-group">
 							<label for="email"><?php echo 'Email' ?></label>
-							<input type="email" id="email" name="semail" value="<?php echo $row['semail']; ?>" class="form-control">
+							<emnput type="email" id="email" name="semail" value="<?php echo $row['semail']; ?>" class="form-control">
 						</div>
             <div class="form-group">
 							<label for="email"><?php echo 'Password' ?></label>
-							<input type="email" id="email" name="spassword" value="<?php echo $row['spassword']; ?>" class="form-control">
+							<emnput type="email" id="email" name="spassword" value="<?php echo $row['spassword']; ?>" class="form-control">
 						</div>
             <div class="form-group">
 							<label for="email"><?php echo 'Contact No :' ?></label>
-							<input type="email" id="email" name="snumber" value="<?php echo $row['snumber']; ?>" class="form-control">
+							<emnput type="email" id="email" name="snumber" value="<?php echo $row['snumber']; ?>" class="form-control">
 						</div>
             <div class="form-group">
 							<label for="email"><?php echo 'Roll NO :' ?></label>
-							<input type="email" id="email" name="sroll" value="<?php echo $row['sroll']; ?>" class="form-control">
+							<emnput type="email" id="email" name="sroll" value="<?php echo $row['sroll']; ?>" class="form-control">
 						</div>
             <div class="form-group">
 							<label for="email"><?php echo 'Address' ?></label>
-							<input type="email" id="email" name="saddr" value="<?php echo $row['saddr']; ?>" class="form-control">
+							<emnput type="email" id="email" name="saddr" value="<?php echo $row['saddr']; ?>" class="form-control">
 						</div>
             
             <div class="form-group">
 							<label for="email"><?php echo 'Date Of Birth' ?></label>
-							<input type="email" id="email" name="sdob" value="<?php echo $row['sdob']; ?>" class="form-control">
+							<emnput type="email" id="email" name="sdob" value="<?php echo $row['sdob']; ?>" class="form-control">
 						</div>
             <div class="form-group">
 							<label for="email"><?php echo 'Branch' ?></label>
-							<input type="email" id="email" name="sbranch" value="<?php echo $row['sbranch']; ?>" class="form-control">
+							<emnput type="email" id="email" name="sbranch" value="<?php echo $row['sbranch']; ?>" class="form-control">
 						</div>
             <div class="form-group">
 							<label for="email"><?php echo 'SEM' ?></label>
-							<input type="email" id="email" name="ssem" value="<?php echo $row['ssem']; ?>" class="form-control">
+							<emnput type="email" id="email" name="ssem" value="<?php echo $row['ssem']; ?>" class="form-control">
 						</div>
             <div class="col-md-4 col-md-offset-4">
-								<button id="update-profile" class="btn btn-success btn-block" type="button"><i class="glyphicon glyphicon-ok"></i> <?php echo 'Update profile' ?></button>
+								<button id="update-profile" class="btn btn-success btn-block" type="button"><em class="glyphicon glyphicon-ok"><em> <?php echo 'Update profile' ?></button>
 							</div>
 
 
@@ -206,7 +206,7 @@ $sid=$_SESSION['sid'];
     </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
+      <em class="fa fa-angle-up"><em>
     </a>
 
     <!-- Logout Modal-->
@@ -223,9 +223,9 @@ $sid=$_SESSION['sid'];
             </button>
           </div>
           <div class="modal-body">Here are some quick options:
-            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><i class="fa fa-user"></i> <strong>My profile</strong></a>
+            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><em class="fa fa-user"><em> <strong>My profile</strong></a>
                <?php if(getLoggedAdmin()){ ?>
-               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><i class="fa fa-cog"></i> <strong><?php echo $Translation['admin area']; ?></strong></a>
+               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><em class="fa fa-cog"><em> <strong><?php echo $Translation['admin area']; ?></strong></a>
                <?php } ?>
                <?php if(!$_GET['signIn'] && !$_GET['loginFailed']){ ?>
                <?php if(getLoggedMemberID() == $adminConfig['anonymousMember']){ ?>
