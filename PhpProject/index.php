@@ -30,13 +30,12 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
                                                  title="Return to the Amrita Vishwa Vidyapeetham home page"><img
                                         src="assets/img/nvimg1.jpg" class="img-reponsive"
                                         alt="Amrita Vishwa Vidyapeetham"></a>
-                                        <h1 align ="center">Occupancy Chart Generation and Room Allocation for CSE Dept.</h1>
+                                        <h1 >Occupancy Chart Generation and Room Allocation for CSE Dept.</h1>
 
                                         </div>
 <!-- </div> -->
     <div class="container">
-        <div align="center">
-            <!-- <h1 align="center">Occupancy Chart Generation and Room Allocation for CSE Dept.</h1> -->
+        <div >
         </div>
     </div>
 </div>
@@ -48,7 +47,6 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <!-- <li data-target="#myCarousel" data-slide-to="3"></li> -->
     </ol>
 
     <!-- Wrapper for slides -->
@@ -57,18 +55,7 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
             <img src="assets/img/img.jpg" alt="Chania">
         </div>
 
-        <!-- <div class="item">
-            <img src="assets/img/img2.jpg" alt="Chania">
-        </div>
-
-        <div class="item">
-            <img src="assets/img/img3.jpg" alt="Flower">
-        </div> -->
-
-
-        <!-- <div class="item">
-            <img src="assets/img/lab2.jpg" alt="Flower">
-        </div> -->
+       
     </div>
 </div>
 <script type="text/javascript">
@@ -81,7 +68,7 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
         window.alert("Downloaded!");
     }
 </script>
-<div align="center" STYLE="margin-top: 30px">
+<div  STYLE="margin-top: 30px">
     <button data-scroll-reveal="enter from the bottom after 0.2s"
             id="teacherLoginBtn" class="btn btn-info btn-lg">TEACHER LOGIN
     </button>
@@ -93,7 +80,7 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
     </button>
 </div>
 <br>
-<div align="center">
+<div >
     <form data-scroll-reveal="enter from the bottom after 0.2s" action="studentvalidation.php" method="post">
         <select id="select_semester" name="select_semester" class="list-group-item">
             <option selected disabled>Select Semester</option>
@@ -129,7 +116,7 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
                         <input type="password" class="form-control" id="password" name="PASS"
                                placeholder="Password ...">
                     </div>
-                    <div align="right">
+                    <div >
                         <input type="submit" class="btn btn-default" name="LOGIN" value="LOGIN">
                     </div>
                 </form>
@@ -147,7 +134,7 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
                         <input type="password" class="form-control" id="password" name="spassword"
                                placeholder="Password ...">
                     </div>
-                    <div align="right">
+                    <div >
                         <input type="submit" class="btn btn-default" name="LOGIN" value="LOGIN">
                     </div>
                 </form>
@@ -166,7 +153,7 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
                         <input type="password" class="form-control" id="password" name="password"
                                placeholder="Password ...">
                     </div>
-                <div align="right">
+                <div >
                     <button type="submit" class="btn btn-default" name="LOGIN">LOGIN</button>
                 </div>
             </form>
@@ -176,10 +163,8 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
 
 
 <script>
-    // Get the modal
     var modal = document.getElementById('myModal');
 
-    // Get the button that opens the modal
     var teacherLoginBtn = document.getElementById("teacherLoginBtn");
     var studentLoginBtn = document.getElementById("studentLoginBtn");
     var adminLoginBtn = document.getElementById("adminLoginBtn");
@@ -188,10 +173,8 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
     var studentForm = document.getElementById("studentForm");
     var adminForm = document.getElementById("adminForm");
 
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal
     adminLoginBtn.onclick = function () {
         modal.style.display = "block";
         heading.innerHTML = "Admin Login";
@@ -223,7 +206,6 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
 
     }
 
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
         adminForm.style.display = "none";
@@ -231,16 +213,12 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
 
     }
 
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 </script>
-<!--HOME SECTION END-->
-<!--HOME SECTION TAG LINE END-->
-
 
 
 <div class="container">
@@ -278,7 +256,6 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
 </div>
 <!-- CONTACT SECTION END-->
 <div id="footer">
-    <!--  &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
 --></div>
 <!-- FOOTER SECTION END-->
 
