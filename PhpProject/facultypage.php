@@ -39,7 +39,7 @@ include('connection.php');
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="facultypage.php">Faclty Area</a>
     <a href="/"  id="logo"
-                                                 title="Return to the Amrita Vishwa Vidyapeetham home page"><img
+                                                 title="Return to the Amrita Vishwa Vidyapeetham home page"><emmg
                                         src="assets/img/amrita.jpg" class="img-reponsive"
                                         alt="Amrita Vishwa Vidyapeetham"></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -228,12 +228,12 @@ include('connection.php');
                         <select class="form-control" id="substitute" name="SB">
 
                         </select>
-                        <input type="hidden" id="cell_number" class="btn btn-default" name="CN">
+                        <emnput type="hidden" id="cell_number" class="btn btn-default" name="CN">
 
                     </div>
                     <div align="right" class="form-group">
 
-                        <input type="submit" id="submit" class="btn btn-default" name="ADD" value="CHECK">
+                        <emnput type="submit" id="submit" class="btn btn-default" name="ADD" value="CHECK">
                     </div>
                 </form>
             </div>
@@ -663,7 +663,7 @@ include('connection.php');
     </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
+      <em class="fa fa-angle-up"></em>
     </a>
 
     <!-- Logout Modal-->
@@ -680,9 +680,9 @@ include('connection.php');
             </button>
           </div>
           <div class="modal-body">Here are some quick options:
-            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><i class="fa fa-user"></i> <strong>My profile</strong></a>
+            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><em class="fa fa-user"></em> <strong>My profile</strong></a>
                <?php if(getLoggedAdmin()){ ?>
-               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><i class="fa fa-cog"></i> <strong><?php echo $Translation['admin area']; ?></strong></a>
+               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><em class="fa fa-cog"></em> <strong><?php echo $Translation['admin area']; ?></strong></a>
                <?php } ?>
                <?php if(!$_GET['signIn'] && !$_GET['loginFailed']){ ?>
                <?php if(getLoggedMemberID() == $adminConfig['anonymousMember']){ ?>
