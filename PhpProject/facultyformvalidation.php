@@ -8,11 +8,12 @@ if (isset($_POST['FN']) && isset($_POST['password'])) {
 } else {
     die();
 }
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"), "SELECT name FROM teachers WHERE emailid = '$fac' and password = '$password'");
+$q = mysqli_query($conn, "SELECT * FROM teachers WHERE emailid = '$fac' and password = '$password'");
 if (mysqli_num_rows($q) == 1) {
     $row = mysqli_fetch_assoc($q);
+
     $_SESSION['loggedin_name'] = $row['name'];
-    $_SESSION['loggedin_id'] = $fac;
+    $_SESSION['tid'] = $row['faculty_number'];
     header("Location:facultypage.php");
 } else {
     $message = "Username incorrect.\\nTry again.";

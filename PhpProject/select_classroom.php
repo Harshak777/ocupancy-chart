@@ -2,17 +2,14 @@
 
 <?php
 session_start();
-//  include('studentLogin.php');  
 include('connection.php');
 
-$sid=$_SESSION['sid'];
+$tid=$_SESSION['tid'];
 
-        $sql = "SELECT * FROM student_info WHERE sid='$sid'";
+        $sql = "SELECT * FROM teachers WHERE faculty_number='$tid'";
         $run_query=mysqli_query($conn,$sql);
         $row=mysqli_fetch_array($run_query);
-        $name=$row['sname'];
-        $ssec=$row['ssec'];
-
+        $name=$row['name'];
 
 ?>
 
@@ -37,7 +34,7 @@ $sid=$_SESSION['sid'];
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="dashbord_student.php">Student Area</a>
+    <a class="navbar-brand" href="faculty_edit.php">Faculty Area</a>
     <a href="/"  id="logo"
                                                  title="Return to the Amrita Vishwa Vidyapeetham home page"><img
                                         src="assets/img/amrita.jpg" class="img-reponsive"
@@ -48,27 +45,21 @@ $sid=$_SESSION['sid'];
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="student_edit.php">
+          <a class="nav-link" href="faculty_edit.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
-          <a class="nav-link" href="dashbord_student.php">
+          <a class="nav-link" href="facultypage.php">
             <i class="fa fa-table"></i>
-            <span class="nav-link-text">My Section Timetable</span>
+            <span class="nav-link-text">My Timetable</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
-          <a class="nav-link" href="dashbord_student_class.php">
-            <i class="fa fa-table"></i>
-            <span class="nav-link-text">My Classroom Timetable</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
-          <a class="nav-link" href="notify.php">
-          <i class="fa fa-fw fa-whatsapp"></i>
-            <span class="nav-link-text">Notifications</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="select_classroom.php">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Select class</span>
           </a>
         </li>
         <!-- <?php include'sidenav.php'; ?> -->
@@ -84,7 +75,7 @@ $sid=$_SESSION['sid'];
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
           <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
-          <li><a href="index.php"><?php echo $name;  //echo getLoggedMemberID();// name of the login ?></a></li>
+          <li><a href="index.php"><?php echo $_SESSION['loggedin_name'];  //echo getLoggedMemberID();// name of the login ?></a></li>
              <i class="fa fa-fw fa-sign-out"></i><li>Logout</li></li> 
         </li>
       </ul>
@@ -94,79 +85,76 @@ $sid=$_SESSION['sid'];
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="dashbord_student.php">Dashboard</a>
-        </li>
-         <li class="breadcrumb-item active"><?php echo $name; ?></li>
+        
+         <li class="breadcrumb-item active"><?php echo $_SESSION['loggedin_name']; ?></li>
       </ol>
      
      <!-- center area -->
-     <style>
+     
+
+
+
+     <div class="page-header">
+		<h1><?php echo  $name; ?></h1>
+	</div>
+
+
+  
+    <div align="center">
+    <br>
+    <style>
         table {
-            margin-top: 20px;
+            margin-top: 10px;
             font-family: arial, sans-serif;
             border-collapse: collapse;
-            width: 100%;
+            width: 70%;
         }
 
         td, th {
-            border: 2px solid #dddddd;
+            border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
 
         tr:nth-child(even) {
-            background-color: #ffffff;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #ffffff;
+            background-color: #dddddd;
         }
     </style>
-     <div id="TT" style="background-color: #FFFFFF">
-        <table border="2" cellspacing="3" align="center" id="timetable">
-            <caption><strong><br><br>
-                   
-                </strong></caption>
-            <tr>
-                <td style="text-align:center">WEEKDAYS</td>
-                <td style="text-align:center">8:00-8:50</td>
-                <td style="text-align:center">8:55-9:45</td>
-                <td style="text-align:center">9:50-10:40</td>
-                <td style="text-align:center">10:45-11:35</td>
-                <td style="text-align:center">11:40-12:30</td>
-                <td style="text-align:center">12:30-1:30</td>
-                <td style="text-align:center">1:30-4:00</td>
-            </tr>
-            <tr>
-                <?php
-                $table = 't014';
-                $q = mysqli_query($conn,
-                "SELECT * FROM $ssec ");
-                $qq = mysqli_query($conn,
-                "SELECT * FROM subjects");
-            $days = array('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY');
-            $i = -1;
-            $str = "<br>";
-                
-                while ($row = mysqli_fetch_assoc($q)) {
-                  $i++;
 
-                  echo "
-           <tr><td style=\"text-align:center\">$days[$i]</td>
-           <td style=\"text-align:center\">{$row['period1']}</td>
-          <td style=\"text-align:center\">{$row['period2']}</td>
-          <td style=\"text-align:center\">{$row['period3']}</td>
-           <td style=\"text-align:center\">{$row['period4']}</td>
-            <td style=\"text-align:center\">{$row['period5']}</td>
-            <td style=\"text-align:center\">LUNCH</td>
-            <td style=\"text-align:center\">{$row['period6']}</td>
-          </tr>\n";
-              }
-               
-                ?>
-    </div>
 
+
+    <table id=table>
+        
+        <tr>
+
+            <th width="100">Room No</th>
+            <th width="100">Capacity</th>
+            <th width="100">Power Points</th>
+            <th width="100">Projector Availability</th>
+            <th width="100">Smart Class</th>
+            <th width="100">Speaker</th>
+            <th width="100">Section Alloted</th>
+            <th width="60">Action</th>
+        </tr>
+        <?php
+        include 'connection.php';
+        $q = mysqli_query($conn,
+            "SELECT * FROM classrooms ");
+        while ($row = mysqli_fetch_assoc($q)) {
+            echo "<tr><td>{$row['croom_no']}</td>
+                    <td>{$row['c_strength']}</td>
+                    <td>{$row['pp_no']}</td>
+                    <td>{$row['projector']}</td>
+                    <td>{$row['smart_class']}</td>
+                    <td>{$row['speaker']}</td>
+                    <td>{$row['sec_name']}</td>
+                    <td><button>Select</button></td>
+                    </tr>\n";
+        }
+        echo "<script>deleteHandlers();</script>";
+        ?>
+    </table>
+</div>
 
 
 
@@ -199,6 +187,7 @@ $sid=$_SESSION['sid'];
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
+          <small>Copyright © Jisort 2018</small>
         </div>
       </div>
     </footer>

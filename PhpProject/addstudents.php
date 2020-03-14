@@ -33,7 +33,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="addteachers.php">ADD TEACHERS</a></li>
                 <li><a href="addstudents.php">ADD STUDENTS</a></li>
-
+                <li><a href="addsection.php">ADD SECTION</a></li>
                 <li><a href="addsubjects.php">ADD SUBJECTS</a></li>
                 <li><a href="addclassrooms.php">ADD CLASSROOMS</a></li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">ALLOTMENT
@@ -108,6 +108,21 @@
 
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="ssec">Section </label>
+
+                        <select class="form-control" id="section" name="ssec">
+                            <option selected disabled>Select</option>
+                            <option value="CSEA">CSE-A</option>
+                            <option value="CSEB">CSE-B</option>
+                            <option value="CSEC">CSE-C</option>
+                            <option value="CSED">CSE-D</option>
+                            <option value="CSEE">CSE-E</option>
+                            <option value="CSEF">CSE-F</option>
+
+
+                        </select>
+                    </div class="form-group">
                     <div class="form-group">
                         <label for="studentcontactnumber">Student Contact No.</label>
                         <input type="text" class="form-control" id="studentcontactnumber" name="snumber"
@@ -205,9 +220,9 @@
         }
     </style>
 
-    <script>
+<script>
         function deleteHandlers() {
-            var table = document.getElementById("teacherstable");
+            var table = document.getElementById("studentstable");
             var rows = table.getElementsByTagName("tr");
             for (i = 0; i < rows.length; i++) {
                 var currentRow = table.rows[i];
@@ -219,18 +234,19 @@
                             var id = cell.innerHTML;
                             var x;
                             if (confirm("Are You Sure?") == true) {
-                                window.location.href = "deleteteacher.php?name=" + id;
+                                window.location.href = "deletestudent.php?sroll=" + id;
 
                             }
 
                         };
                     };
-                currentRow.cells[6].onclick = createDeleteHandler(currentRow);
+                currentRow.cells[9].onclick = createDeleteHandler(currentRow);
             }
         }
     </script>
 
-    <table id=teacherstable style="margin-left: 80px">
+   
+    <table id="studentstable" style="margin-left: 80px">
         <caption><strong>Student Information </strong></caption>
         <tr>
             <th width=100>Student Roll</th>
@@ -239,6 +255,7 @@
             <th width="100">Date of Birth</th>
             <th width="100">Contact No.</th>
             <th width="100">Email ID</th>
+            <th width="50   ">Section</th>
             <th width="40">Semester</th>
             <th width="100">Address</th>
             <th width="40">Action</th>
@@ -246,7 +263,7 @@
         <tbody>
         <?php
         include 'connection.php';
-        $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+        $q = mysqli_query($conn,
             "SELECT * FROM student_info ORDER BY sid ASC");
 
         while ($row = mysqli_fetch_assoc($q)) {
@@ -257,16 +274,18 @@
                     <td>{$row['sdob']}</td>
                     <td>{$row['snumber']}</td>
                     <td>{$row['semail']}</td>
+                    <td>{$row['ssec']}</td>
                     <td>{$row['ssem']}</td>
                     <td>{$row['saddr']}</td>
-                   <td>
-                    <button>Delete</button></td>
+                   <td><button>Delete</button></td>
                     </tr>\n";
         }
         echo "<script>deleteHandlers();</script>";
         ?>
         </tbody>
     </table>
+
+
 
 </div>
 <!--HOME SECTION END-->

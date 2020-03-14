@@ -68,7 +68,7 @@
             <select name="tobealloted" class="list-group-item">
                 <?php
                 include 'connection.php';
-                $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+                $q = mysqli_query($conn,
                     "SELECT * FROM subjects");
                 $row_count = mysqli_num_rows($q);
                 if ($row_count) {
@@ -90,7 +90,7 @@
                 <?php
                 include 'connection.php';
 
-                $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+                $q = mysqli_query($conn,
                     "SELECT * FROM teachers ");
                 $row_count = mysqli_num_rows($q);
                 if ($row_count) {
@@ -168,14 +168,14 @@
     <tbody>
     <?php
     include 'connection.php';
-    $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+    $q = mysqli_query($conn,
         "SELECT * FROM subjects ");
 
     while ($row = mysqli_fetch_assoc($q)) {
         if ($row['isAlloted'] == 0 || $row['course_type'] == 'LAB')
             continue;
         $teacher_id = $row['allotedto'];
-        $t = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+        $t = mysqli_query($conn,
             "SELECT name FROM teachers WHERE faculty_number = '$teacher_id'");
         $trow = mysqli_fetch_assoc($t);
         echo "<tr><td>{$row['subject_code']}</td>

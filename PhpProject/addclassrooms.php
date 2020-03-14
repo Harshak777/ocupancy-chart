@@ -32,9 +32,9 @@
         <div class="navbar-collapse collapse move-me">
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="addteachers.php">ADD TEACHERS</a></li>
-                <li><a href="addsubjects.php">ADD SUBJECTS</a></li>
+                <li><a href="addstudents.php">ADD STUDENTS</a></li>
                 <li><a href="addsection.php">ADD SECTION</a></li>
-
+                <li><a href="addsubjects.php">ADD SUBJECTS</a></li>
                 <li><a href="addclassrooms.php">ADD CLASSROOMS</a></li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">ALLOTMENT
                         <span class="caret"></span></a>
@@ -70,6 +70,90 @@
     </button>
    
 </div>
+
+<div align="center">
+    <br>
+    <style>
+        table {
+            margin-top: 10px;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 70%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+
+<script>
+    function deleteHandlers() {
+        var table = document.getElementById("classroomstable");
+        var rows = table.getElementsByTagName("tr");
+        for (i = 0; i < rows.length; i++) {
+            var currentRow = table.rows[i];
+            //var b = currentRow.getElementsByTagName("td")[0];
+            var createDeleteHandler =
+                function (row) {
+                    return function () {
+                        var cell = row.getElementsByTagName("td")[0];
+                        var id = cell.innerHTML;
+                        var x;
+                        if (confirm("Are You Sure?") == true) {
+                            window.location.href = "deleteclassroom.php?croom_no=" + id;
+
+                        }
+
+                    };
+                };
+            currentRow.cells[7].onclick = createDeleteHandler(currentRow);
+        }
+    }
+</script>
+
+
+<table id="classroomstable">
+        <caption><strong>ADDED CLASSROOMS</strong></caption>
+        <tr>
+
+            <th width="100">Room No</th>
+            <th width="100">Capacity</th>
+            <th width="100">Power Points</th>
+            <th width="100">Projector Availability</th>
+            <th width="100">Smart Class</th>
+            <th width="100">Speaker</th>
+            <th width="100">Section Alloted</th>
+            <th width="60">Action</th>
+        </tr>
+        <tbody>
+        <?php
+        include 'connection.php';
+        $q = mysqli_query($conn,
+            "SELECT * FROM classrooms");
+        while ($row = mysqli_fetch_assoc($q)) {
+            echo "<tr><td>{$row['croom_no']}</td>
+                    <td>{$row['c_strength']}</td>
+                    <td>{$row['pp_no']}</td>
+                    <td>{$row['projector']}</td>
+                    <td>{$row['smart_class']}</td>
+                    <td>{$row['speaker']}</td>
+                    <td>{$row['sec_name']}</td>
+                    <td><button>Delete</button></td>
+                    </tr>\n";
+        }
+        echo "<script>deleteHandlers();</script>";
+        ?>
+        </tbody>
+    </table>
+</div>
+
 
 <div id="myModal" class="modal">
 
@@ -200,73 +284,10 @@
     }
 </script>
 
-<script>
-    function deleteHandlers() {
-        var table = document.getElementById("classroomstable");
-        var rows = table.getElementsByTagName("tr");
-        for (i = 0; i < rows.length; i++) {
-            var currentRow = table.rows[i];
-            //var b = currentRow.getElementsByTagName("td")[0];
-            var createDeleteHandler =
-                function (row) {
-                    return function () {
-                        var cell = row.getElementsByTagName("td")[0];
-                        var id = cell.innerHTML;
-                        var x;
-                        if (confirm("Are You Sure?") == true) {
-                            window.location.href = "deleteclassroom.php?name=" + id;
-
-                        }
-
-                    };
-                };
-            currentRow.cells[1].onclick = createDeleteHandler(currentRow);
-        }
-    }
-</script>
-
-<div align="center">
-    <br>
-    <style>
-        table {
-            margin-top: 10px;
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 70%;
-        }
-
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
 
 
-    <table id=table>
-        <caption><strong>ADDED CLASSROOMS</strong></caption>
-        <tr>
 
-            <th width="100">Name</th>
-            <th width="60">Action</th>
-        </tr>
-        <?php
-        include 'connection.php';
-        $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
-            "SELECT * FROM classrooms ");
-        while ($row = mysqli_fetch_assoc($q)) {
-            echo "<tr><td>{$row['croom_no']}</td>
-                    <td><button>Delete</button></td>
-                    </tr>\n";
-        }
-        echo "<script>deleteHandlers();</script>";
-        ?>
-    </table>
-</div>
+
 <!--HOME SECTION END-->
 
 <!--<div id="footer">

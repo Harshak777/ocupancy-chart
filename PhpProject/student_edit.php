@@ -11,7 +11,7 @@ $sid=$_SESSION['sid'];
         $run_query=mysqli_query($conn,$sql);
         $row=mysqli_fetch_array($run_query);
         $name=$row['sname'];
-        $ssec=$row['ssec'];
+
 
 
 ?>
@@ -56,7 +56,7 @@ $sid=$_SESSION['sid'];
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="dashbord_student.php">
             <i class="fa fa-table"></i>
-            <span class="nav-link-text">My Section Timetable</span>
+            <span class="nav-link-text">My Timetable</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
@@ -101,74 +101,76 @@ $sid=$_SESSION['sid'];
       </ol>
      
      <!-- center area -->
-     <style>
-        table {
-            margin-top: 20px;
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+     <div class="page-header">
+		<h1><?php echo  $name; ?></h1>
+	</div>
+ 
 
-        td, th {
-            border: 2px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #ffffff;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-    </style>
-     <div id="TT" style="background-color: #FFFFFF">
-        <table border="2" cellspacing="3" align="center" id="timetable">
-            <caption><strong><br><br>
-                   
-                </strong></caption>
-            <tr>
-                <td style="text-align:center">WEEKDAYS</td>
-                <td style="text-align:center">8:00-8:50</td>
-                <td style="text-align:center">8:55-9:45</td>
-                <td style="text-align:center">9:50-10:40</td>
-                <td style="text-align:center">10:45-11:35</td>
-                <td style="text-align:center">11:40-12:30</td>
-                <td style="text-align:center">12:30-1:30</td>
-                <td style="text-align:center">1:30-4:00</td>
-            </tr>
-            <tr>
-                <?php
-                $table = 't014';
-                $q = mysqli_query($conn,
-                "SELECT * FROM $ssec ");
-                $qq = mysqli_query($conn,
-                "SELECT * FROM subjects");
-            $days = array('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY');
-            $i = -1;
-            $str = "<br>";
-                
-                while ($row = mysqli_fetch_assoc($q)) {
-                  $i++;
-
-                  echo "
-           <tr><td style=\"text-align:center\">$days[$i]</td>
-           <td style=\"text-align:center\">{$row['period1']}</td>
-          <td style=\"text-align:center\">{$row['period2']}</td>
-          <td style=\"text-align:center\">{$row['period3']}</td>
-           <td style=\"text-align:center\">{$row['period4']}</td>
-            <td style=\"text-align:center\">{$row['period5']}</td>
-            <td style=\"text-align:center\">LUNCH</td>
-            <td style=\"text-align:center\">{$row['period6']}</td>
-          </tr>\n";
-              }
-               
-                ?>
-    </div>
+  <div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="glyphicon glyphicon-info-sign"></i>
+						<!-- <?php echo '<h3>Your info</h3>' ?> -->
+					</h3>
+				</div>
+        <form action = 'update.php' method = 'POST'>
+				<div class="panel-body">
+					
+          <div class="form-group">
+							<label for="name"><?php echo 'Your Name' ?></label>
+							<input type="email" id="email" name="sname" value="<?php echo $row['sname']; ?>" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="email"><?php echo 'Email' ?></label>
+							<input type="email" id="email" name="semail" value="<?php echo $row['semail']; ?>" class="form-control">
+						</div>
+            <div class="form-group">
+							<label for="email"><?php echo 'Password' ?></label>
+							<input type="email" id="email" name="spassword" value="<?php echo $row['spassword']; ?>" class="form-control">
+						</div>
+            <div class="form-group">
+							<label for="email"><?php echo 'Contact No :' ?></label>
+							<input type="email" id="email" name="snumber" value="<?php echo $row['snumber']; ?>" class="form-control">
+						</div>
+            <div class="form-group">
+							<label for="email"><?php echo 'Roll NO :' ?></label>
+							<input type="email" id="email" name="sroll" value="<?php echo $row['sroll']; ?>" class="form-control">
+						</div>
+            <div class="form-group">
+							<label for="email"><?php echo 'Address' ?></label>
+							<input type="email" id="email" name="saddr" value="<?php echo $row['saddr']; ?>" class="form-control">
+						</div>
+            
+            <div class="form-group">
+							<label for="email"><?php echo 'Date Of Birth' ?></label>
+							<input type="email" id="email" name="sdob" value="<?php echo $row['sdob']; ?>" class="form-control">
+						</div>
+            <div class="form-group">
+							<label for="email"><?php echo 'Branch' ?></label>
+							<input type="email" id="email" name="sbranch" value="<?php echo $row['sbranch']; ?>" class="form-control">
+						</div>
+            <div class="form-group">
+							<label for="email"><?php echo 'SEM' ?></label>
+							<input type="email" id="email" name="ssem" value="<?php echo $row['ssem']; ?>" class="form-control">
+						</div>
+            <div class="col-md-4 col-md-offset-4">
+								<button id="update-profile" class="btn btn-success btn-block" type="button"><i class="glyphicon glyphicon-ok"></i> <?php echo 'Update profile' ?></button>
+							</div>
 
 
+						
 
+						<div class="row">
+           
+							
+              </form>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+
+
+     
 
 
 

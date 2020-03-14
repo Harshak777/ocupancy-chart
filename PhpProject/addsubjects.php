@@ -33,9 +33,8 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="addteachers.php">ADD TEACHERS</a></li>
                 <li><a href="addstudents.php">ADD STUDENTS</a></li>
-                <li><a href="addsubjects.php">ADD SUBJECTS</a></li>
                 <li><a href="addsection.php">ADD SECTION</a></li>
-
+                <li><a href="addsubjects.php">ADD SUBJECTS</a></li>
                 <li><a href="addclassrooms.php">ADD CLASSROOMS</a></li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">ALLOTMENT
                         <span class="caret"></span></a>
@@ -86,7 +85,7 @@
                 if ($code == "" || $code == "Subject Code") {
                     continue;
                 }
-                $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+                $q = mysqli_query($conn,
                     "INSERT INTO subjects VALUES ('$code','$name','$type','$semester','$department',0,'','','')");
             }
         }
@@ -260,7 +259,7 @@
         </tr>
         <?php
         include 'connection.php';
-        $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+        $q = mysqli_query($conn,
             "SELECT * FROM subjects ORDER BY subject_code ASC ");
         while ($row = mysqli_fetch_assoc($q)) {
             echo "<tr><td>{$row['subject_code']}</td>

@@ -2,7 +2,6 @@
 
 <?php
 session_start();
-//  include('studentLogin.php');  
 include('connection.php');
 
 $sid=$_SESSION['sid'];
@@ -37,7 +36,7 @@ $sid=$_SESSION['sid'];
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="dashbord_student.php">Student Area</a>
+  <a class="navbar-brand" href="dashbord_student.php">Student Area</a>
     <a href="/"  id="logo"
                                                  title="Return to the Amrita Vishwa Vidyapeetham home page"><img
                                         src="assets/img/amrita.jpg" class="img-reponsive"
@@ -94,79 +93,66 @@ $sid=$_SESSION['sid'];
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="dashbord_student.php">Dashboard</a>
-        </li>
+        
          <li class="breadcrumb-item active"><?php echo $name; ?></li>
       </ol>
      
      <!-- center area -->
-     <style>
+     
+
+
+
+     <div class="page-header">
+		<h1><?php echo  $name; ?></h1>
+	</div>
+
+
+  
+    <div align="center">
+    <br>
+    <style>
         table {
-            margin-top: 20px;
+            margin-top: 10px;
             font-family: arial, sans-serif;
             border-collapse: collapse;
-            width: 100%;
+            width: 70%;
         }
 
         td, th {
-            border: 2px solid #dddddd;
+            border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
 
         tr:nth-child(even) {
-            background-color: #ffffff;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #ffffff;
+            background-color: #dddddd;
         }
     </style>
-     <div id="TT" style="background-color: #FFFFFF">
-        <table border="2" cellspacing="3" align="center" id="timetable">
-            <caption><strong><br><br>
-                   
-                </strong></caption>
-            <tr>
-                <td style="text-align:center">WEEKDAYS</td>
-                <td style="text-align:center">8:00-8:50</td>
-                <td style="text-align:center">8:55-9:45</td>
-                <td style="text-align:center">9:50-10:40</td>
-                <td style="text-align:center">10:45-11:35</td>
-                <td style="text-align:center">11:40-12:30</td>
-                <td style="text-align:center">12:30-1:30</td>
-                <td style="text-align:center">1:30-4:00</td>
-            </tr>
-            <tr>
-                <?php
-                $table = 't014';
-                $q = mysqli_query($conn,
-                "SELECT * FROM $ssec ");
-                $qq = mysqli_query($conn,
-                "SELECT * FROM subjects");
-            $days = array('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY');
-            $i = -1;
-            $str = "<br>";
-                
-                while ($row = mysqli_fetch_assoc($q)) {
-                  $i++;
 
-                  echo "
-           <tr><td style=\"text-align:center\">$days[$i]</td>
-           <td style=\"text-align:center\">{$row['period1']}</td>
-          <td style=\"text-align:center\">{$row['period2']}</td>
-          <td style=\"text-align:center\">{$row['period3']}</td>
-           <td style=\"text-align:center\">{$row['period4']}</td>
-            <td style=\"text-align:center\">{$row['period5']}</td>
-            <td style=\"text-align:center\">LUNCH</td>
-            <td style=\"text-align:center\">{$row['period6']}</td>
-          </tr>\n";
-              }
-               
-                ?>
-    </div>
 
+
+    <table id=table>
+        
+        <tr>
+
+            <th width="100">Room No</th>
+            <th width="150">Notification</th>
+            <!-- <th width="60">Action</th> -->
+        </tr>
+        <?php
+        include 'connection.php';
+        $q = mysqli_query($conn,
+            "SELECT * FROM notification where sec_name ='$ssec' ");
+            
+        while ($row = mysqli_fetch_assoc($q)) {
+            echo "<tr><td>{$row['croom_no']}</td>
+                    <td>{$row['notify']}</td>
+                    </tr>\n";
+        }
+        echo "<script>deleteHandlers();</script>";
+        ?>
+    </table>
+</div>
 
 
 
@@ -199,6 +185,7 @@ $sid=$_SESSION['sid'];
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
+          <small>Copyright © Jisort 2018</small>
         </div>
       </div>
     </footer>

@@ -12,6 +12,10 @@ $sid=$_SESSION['sid'];
         $row=mysqli_fetch_array($run_query);
         $name=$row['sname'];
         $ssec=$row['ssec'];
+        $cc = "SELECT * FROM classrooms WHERE sec_name='$ssec'";
+        $run_query2=mysqli_query($conn,$cc);
+        $crow=mysqli_fetch_array($run_query2);
+        $class=$crow['croom_no'];
 
 
 ?>
@@ -59,6 +63,7 @@ $sid=$_SESSION['sid'];
             <span class="nav-link-text">My Section Timetable</span>
           </a>
         </li>
+        
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
           <a class="nav-link" href="dashbord_student_class.php">
             <i class="fa fa-table"></i>
@@ -142,7 +147,7 @@ $sid=$_SESSION['sid'];
                 <?php
                 $table = 't014';
                 $q = mysqli_query($conn,
-                "SELECT * FROM $ssec ");
+                "SELECT * FROM $class ");
                 $qq = mysqli_query($conn,
                 "SELECT * FROM subjects");
             $days = array('MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY');

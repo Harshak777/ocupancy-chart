@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: MSaqib
- * Date: 23-09-2016
- * Time: 22:04
- */
+
 include 'connection.php';
 if (isset($_POST['SN']) && isset($_POST['SC']) && isset($_POST['SS']) && isset($_POST['SD'])) {
     $name = $_POST['SN'];
@@ -19,7 +14,7 @@ if (isset($_POST['SN']) && isset($_POST['SC']) && isset($_POST['SS']) && isset($
     echo "<script type='text/javascript'>alert('$message');</script>";
     die();
 }
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"), "INSERT INTO subjects VALUES ('$code','$name','$course','$sem','$dept',0,'','','')");
+$q = mysqli_query($conn, "INSERT INTO subjects VALUES ('$code','$name','$course','$sem','$dept',0,'','','')");
 if ($q) {
     $message = "Subject added.";
     echo "<script type='text/javascript'>alert('$message');</script>";

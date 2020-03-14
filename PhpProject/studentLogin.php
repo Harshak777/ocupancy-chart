@@ -8,7 +8,7 @@ if (isset($_POST['sroll']) && isset($_POST['spassword'])) {
 } else {
     die();
 }
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"), "SELECT * FROM student_info WHERE sroll = '$id' and spassword = '$password' ");
+$q = mysqli_query($conn, "SELECT * FROM student_info WHERE sroll = '$id' and spassword = '$password' ");
 if (mysqli_num_rows($q) == 1) {
     $row = mysqli_fetch_array($q);
     $_SESSION['sid'] = $row['sid'];

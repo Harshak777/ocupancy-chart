@@ -7,7 +7,7 @@
  */
 include 'connection.php';
 $id = $_GET['name'];
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+$q = mysqli_query($conn,
     "DELETE FROM subjects WHERE subject_code = '$id' ");
 if ($q) {
 

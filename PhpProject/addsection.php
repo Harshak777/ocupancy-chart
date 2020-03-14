@@ -88,7 +88,7 @@
     //             if ($facno == "" || $facno == "Faculty No.") {
     //                 continue;
     //             }
-    //             $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
+    //             $q = mysqli_query($conn,
     //                 "INSERT INTO teachers VALUES ('$facno','$name','$alias','$designation','$contact','$email')");
     //             if ($q) {
     //                 $sql = "CREATE TABLE " . $facno . " (
@@ -100,12 +100,12 @@
     //             period5 VARCHAR(30),
     //             period6 VARCHAR(30)
     //             )";
-    //                 mysqli_query(mysqli_connect("localhost", "root", "", "ttms"), $sql);
+    //                 mysqli_query($conn, $sql);
     //                 $days = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday');
     //                 for ($i = 0; $i < 6; $i++) {
     //                     $day = $days[$i];
     //                     $sql = "INSERT into " . $facno . " VALUES('$day','','','','','','')";
-    //                     mysqli_query(mysqli_connect("localhost", "root", "", "ttms"), $sql);
+    //                     mysqli_query($conn, $sql);
     //                 }
     //             }
     //         }
@@ -137,12 +137,12 @@
 
                         <select class="form-control" id="section" name="SN">
                             <option selected disabled>Select</option>
-                            <option value="CSEA">CSE-A</option>
-                            <option value="CSEB">CSE-B</option>
-                            <option value="CSEC">CSE-C</option>
-                            <option value="CSED">CSE-D</option>
-                            <option value="CSEE">CSE-E</option>
-                            <option value="CSEF">CSE-F</option>
+                            <option value="csea">CSE-A</option>
+                            <option value="cseb">CSE-B</option>
+                            <option value="csec">CSE-C</option>
+                            <option value="csed">CSE-D</option>
+                            <option value="csee">CSE-E</option>
+                            <option value="csef">CSE-F</option>
 
 
                         </select>
@@ -150,12 +150,14 @@
 
 
     <div class="form-group">
+<?php     include 'connection.php';
+ ?>
     <label for="class_room_no">Class Room No</label>
         <select name="CR" class="list-group-item">
             <option selected disabled>Select ClassRoom</option>
             <?php
-            $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
-                "SELECT * FROM classrooms ");
+            $q = mysqli_query($conn,
+                "SELECT croom_no FROM classrooms ");
             while ($row = mysqli_fetch_assoc($q)) {
                 echo " \"<option value=\"{$row['croom_no']}\">{$row['croom_no']}</option>\"";
             }
@@ -248,7 +250,7 @@
 
     <script>
         function deleteHandlers() {
-            var table = document.getElementById("teacherstable");
+            var table = document.getElementById("sectiontable");
             var rows = table.getElementsByTagName("tr");
             for (i = 0; i < rows.length; i++) {
                 var currentRow = table.rows[i];
@@ -260,43 +262,38 @@
                             var id = cell.innerHTML;
                             var x;
                             if (confirm("Are You Sure?") == true) {
-                                window.location.href = "deleteteacher.php?name=" + id;
+                                window.location.href = "deletesection.php?name=" + id;
 
                             }
 
                         };
                     };
-                currentRow.cells[6].onclick = createDeleteHandler(currentRow);
+                currentRow.cells[3].onclick = createDeleteHandler(currentRow);
             }
         }
     </script>
 
-    <table id=teacherstable style="margin-left: 80px">
+    <table id="sectiontable" style="margin-left: 80px">
         <caption><strong>Section Information </strong></caption>
         <tr>
-            <th width="130">Faculty No</th>
-            <th width=290>Name</th>
-            <th width=50>Alias</th>
-            <th width="190">Designation</th>
-            <th width="190">Contact No.</th>
-            <th width="290">Email ID</th>
+            <th width="130">Section Name</th>
+            <th width=290>Section Strength</th>
+           
+            <th width="190">Class Room No </th>
+            
             <th width="40">Action</th>
         </tr>
         <tbody>
         <?php
         include 'connection.php';
-        $q = mysqli_query(mysqli_connect("localhost", "root", "", "ttms"),
-            "SELECT * FROM teachers ORDER BY faculty_number ASC");
+        $q = mysqli_query($conn,
+            "SELECT * FROM sections ORDER BY sec_id ASC");
 
         while ($row = mysqli_fetch_assoc($q)) {
-            echo "<tr><td>{$row['faculty_number']}</td>
-                    <td>{$row['name']}</td>
-                    <td>{$row['alias']}</td>
-                    <td>{$row['designation']}</td>
-                    <td>{$row['contact_number']}</td>
-                    <td>{$row['emailid']}</td>
-                   <td>
-                    <button>Delete</button></td>
+            echo "<tr><td>{$row['sec_name']}</td>
+                    <td>{$row['sec_strength']}</td>
+                    <td>{$row['class_name']}</td>
+                    <td><button>Delete</button></td>
                     </tr>\n";
         }
         echo "<script>deleteHandlers();</script>";

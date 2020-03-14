@@ -1,76 +1,110 @@
+
+
 <?php
-// Start the session
 session_start();
-if (isset($_GET['success'])) {
-    echo "<script type='text/javascript'>alert('Time Table Generated');</script>";
-}
+//  include('studentLogin.php');  
+include('connection.php');
+
+// $sid=$_SESSION['sid'];
+
+//         $sql = "SELECT * FROM student_info WHERE sid='$sid'";
+//         $run_query=mysqli_query($conn,$sql);
+//         $row=mysqli_fetch_array($run_query);
+//         $name=$row['sname'];
+
+
 ?>
+
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
 <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-        <meta name="description" content=""/>
-        <meta name="author" content=""/>
-        <title>TimeTable Management System</title>
-        <script type="text/javascript" src="assets/jsPDF/dist/jspdf.min.js"></script>
-        <script type="text/javascript" src="assets/js/html2canvas.js"></script>
-        <!-- BOOTSTRAP CORE STYLE CSS -->
-        <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-        <!-- FONT AWESOME CSS -->
-        <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
-        <!-- FLEXSLIDER CSS -->
-        <link href="assets/css/flexslider.css" rel="stylesheet"/>
-        <!-- CUSTOM STYLE CSS -->
-        <link href="assets/css/style.css" rel="stylesheet"/>
-        <!-- Google	Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Timetable companion</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+
+
+  
 </head>
-<body>
 
-<div class="navbar navbar-inverse navbar-fixed-top " id="menu">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-        </div>
-        <div class="navbar-collapse collapse move-me">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="addteachers.php">ADD TEACHERS</a></li>
-                <li><a href="addstudents.php">ADD STUDENTS</a></li>
-                <li><a href="addsection.php">ADD SECTION</a></li>
-                <li><a href="addsubjects.php">ADD SUBJECTS</a></li>
-                <li><a href="addclassrooms.php">ADD CLASSROOMS</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">ALLOTMENT
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href=allotsubjects.php>THEORY COURSES</a>
-                        </li>
-                        <li>
-                            <a href=allotpracticals.php>PRACTICAL COURSES</a>
-                        </li>
-                        <li>
-                            <a href=allotclasses.php>CLASSROOMS</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="generatetimetable.php">GENERATE TIMETABLE</a></li>
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php">LOGOUT</a></li>
-            </ul>
-
-        </div>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="facultypage1.php">Faclty Area</a>
+    <a href="/"  id="logo"
+                                                 title="Return to the Amrita Vishwa Vidyapeetham home page"><img
+                                        src="assets/img/amrita.jpg" class="img-reponsive"
+                                        alt="Amrita Vishwa Vidyapeetham"></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="faculty_edit.php">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="timetable  ">
+          <a class="nav-link" href="facultypage1.php">
+            <i class="fa fa-table"></i>
+            <span class="nav-link-text">My Timetable</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="select_classroom.php">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Select class</span>
+          </a>
+        </li>
+        <!-- <?php include'sidenav.php'; ?> -->
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
+          <li><a href="index.php"><?php echo $_SESSION['loggedin_name'];  //echo getLoggedMemberID();// name of the login ?></a></li>
+             <i class="fa fa-fw fa-sign-out"></i><li>Logout</li></li> 
+        </li>
+      </ul>
     </div>
-</div>
-<!--NAVBAR SECTION END-->
-<br>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="dashbord_student.php">Dashboard</a>
+        </li>
+         <li class="breadcrumb-item active"><?php echo $_SESSION['loggedin_name']; ?></li>
+      </ol>
+     
+     <!-- center area -->
+     
+
+
+
+
+
+
+
 
 
 <!--Algorithm Implementation-->
@@ -80,7 +114,7 @@ if (isset($_GET['success'])) {
     <div class="modal-content">
         <div class="modal-header">
             <span class="close">&times</span>
-            <h2 id="popupHead">Assign Substitute</h2>
+            <h2 id="popupHead">Add period</h2>
         </div>
         <div class="modal-body" id="AssignSubstitute">
             <!--Admin Login Form-->
@@ -88,17 +122,22 @@ if (isset($_GET['success'])) {
             <div style="display:block" id="assignSubstituteForm">
                 <form method="post" action="assignSubstituteFormValidation.php">
                     <div class="form-group">
-                        <label for="substitute">Substitute</label>
-                        <select class="form-control" id="substitute" name="SB">
+                        <label for="substitute">Click To Allot Period</label>
+                        <!-- <select class="form-control" id="substitute" name="SB">
+                      
 
-                        </select>
-                        <input type="hidden" id="cell_number" class="btn btn-default" name="CN">
+                        </select> -->
+
+                         <br>
+                         <div align="center" class="form-group">
+
+<input type="submit" id="submit" class="btn btn-default" name="CN" value="Allot"> 
+</div>
+
+                        <input type="hidden" id="cell_number" class="btn btn-default" name="CN" >
 
                     </div>
-                    <div align="right" class="form-group">
-
-                        <input type="submit" id="submit" class="btn btn-default" name="ADD" value="CHECK">
-                    </div>
+                    
                 </form>
             </div>
         </div>
@@ -122,14 +161,14 @@ if (isset($_GET['success'])) {
         }
     }
 </script>
-<form action="algo.php" method="post">
+<!-- <form action="algo.php" method="post">
     <div align="center" style="margin-top: 50px">
         <button type="submit"
                 id="generatebutton" class="btn btn-success btn-lg">GENERATE
         </button>
     </div>
-</form>
-<form action="generatetimetable.php" method="post">
+</form> -->
+<form action="facultypage1.php" method="post">
     <div align="center" style="margin-top: 30px">
         <select name="select_teacher" class="list-group-item">
             <option selected disabled>Select Teacher</option>
@@ -155,7 +194,33 @@ if (isset($_GET['success'])) {
         </button>
     </div>
 </form>
-<form action="generatetimetable.php" method="post">
+<form action="facultypage1.php" method="post">
+    <div align="center" style="margin-top: 30px">
+        <select name="select_teacher" class="list-group-item">
+            <option selected disabled>Select Teacher</option>
+            <?php
+            include 'connection.php';
+
+            $q = mysqli_query($conn,
+                "SELECT * FROM classrooms ");
+            $row_count = mysqli_num_rows($q);
+            if ($row_count) {
+                $mystring = '
+     <option selected disabled>Select classroom</option>';
+                while ($row = mysqli_fetch_assoc($q)) {
+                    $mystring .= '<option value="' . $row['croom_no'] . '">' . $row['croom_no'] . '</option>';
+                }
+
+                echo $mystring;
+            }
+            ?>
+
+        </select>
+        <button type="submit" id="viewteacher" class="btn btn-success btn-lg" style="margin-top: 5px">VIEW TIMETABLE
+        </button>
+    </div>
+</form>
+<!-- <form action="facultypage1.php" method="post">
     <div align="center" style="margin-top: 20px">
         <select name="select_semester" class="list-group-item">
             <option selected disabled>Select Semester</option>
@@ -169,7 +234,7 @@ if (isset($_GET['success'])) {
         <button type="submit" id="viewsemester" class="btn btn-success btn-lg" style="margin-top: 5px">VIEW TIMETABLE
         </button>
     </div>
-</form>
+</form> -->
 <script>
     var index = -1;
     function Substitute() {
@@ -389,12 +454,107 @@ if (isset($_GET['success'])) {
     <button id="saveaspdf" class="btn btn-info btn-lg" onclick="gendf()">SAVE AS PDF</button>
 </div>
 
-<!--HOME SECTION END-->
 
-<!--<div id="footer">
-    <!--  &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
--->
-<!-- FOOTER SECTION END-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- center area ends -->
+      <!-- <?php checkdetailsStudent(); ?>  -->
+
+      <!-- <div class="row">
+
+        <div class="col-12">
+          <?php //include '.php'; ?>
+
+
+           <?php //include 'main.php'; ?> 
+        </div>
+      </div> -->
+    </div>
+
+    <!-- /.container-fluid-->
+    
+
+    <!-- /.content-wrapper-->
+    
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Jisort 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+
+            <h5 class="modal-title" id="exampleModalLabel">Hello <?php echo getLoggedMemberID(); ?></h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Here are some quick options:
+            <a href="<?php echo PREPEND_PATH; ?>membership_profile.php" class="btn btn-primary btn-block"><i class="fa fa-user"></i> <strong>My profile</strong></a>
+               <?php if(getLoggedAdmin()){ ?>
+               <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php" class="btn btn-danger btn-block navbar-btn btn-sm visible-xs btn-sm"><i class="fa fa-cog"></i> <strong><?php echo $Translation['admin area']; ?></strong></a>
+               <?php } ?>
+               <?php if(!$_GET['signIn'] && !$_GET['loginFailed']){ ?>
+               <?php if(getLoggedMemberID() == $adminConfig['anonymousMember']){ ?>
+               <p class="navbar-text navbar-right">&nbsp;</p>
+               <a href="<?php echo PREPEND_PATH; ?>index.php?signIn=1" class="btn btn-success navbar-btn btn-sm navbar-right"><strong><?php echo $Translation['sign in']; ?></strong></a>
+               <p class="navbar-text navbar-right">
+                <?php echo $Translation['not signed in']; ?>
+              </p>
+              <?php }else{ ?>
+              <ul class="nav navbar-nav navbar-right hidden-xs" style="min-width: 330px;">
+              </ul>
+              <ul class="nav navbar-nav visible-xs">
+              </ul>
+              <?php } ?>
+              <?php } ?>
+            <!--login/logout area ends-->
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Back</button>
+            <a class="btn btn-primary" href="index.php?signOut=1">Logout</a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- FOOTER SECTION END-->
 
 <!--  Jquery Core Script -->
 <script src="assets/js/jquery-1.10.2.js"></script>
@@ -408,5 +568,7 @@ if (isset($_GET['success'])) {
 <script src="assets/js/jquery.easing.min.js"></script>
 <!--  Custom Scripts -->
 <script src="assets/js/custom.js"></script>
+  </div>
 </body>
+
 </html>
