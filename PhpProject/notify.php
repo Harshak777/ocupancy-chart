@@ -82,8 +82,8 @@ $sid=$_SESSION['sid'];
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
-          <li><a href="index.php"><?php echo $name;  //echo getLoggedMemberID();// name of the login ?></a></li>
+           <?php echo $name; ?></a></li> 
+          <li><a href="index.php"><?php echo $name;  ?></a></li>
              <em class="fa fa-fw fa-sign-out"></em><li>Logout</li></li> 
         </li>
       </ul>
@@ -108,7 +108,7 @@ $sid=$_SESSION['sid'];
 
 
   
-    <div align="center">
+    <div >
     <br>
     <style>
         table {
@@ -137,12 +137,11 @@ $sid=$_SESSION['sid'];
 
             <th id= "null" width="100">Room No</th>
             <th id= "null" width="150">Notification</th>
-            <!-- <th width="60">Action</th> -->
         </tr>
         <?php
-        include 'connection.php';
+        $qw="SELECT * FROM notification where sec_name ='$ssec' ";
         $q = mysqli_query($conn,
-            "SELECT * FROM notification where sec_name ='$ssec' ");
+            $qw);
             
         while ($row = mysqli_fetch_assoc($q)) {
             echo "<tr><td>{$row['croom_no']}</td>
@@ -163,22 +162,6 @@ $sid=$_SESSION['sid'];
 
 
 
-     <!-- center area ends -->
-      <!-- <?php checkdetailsStudent(); ?>  -->
-
-      <!-- <div class="row">
-
-        <div class="col-12">
-          <?php //include '.php'; ?>
-
-
-           <?php //include 'main.php'; ?> 
-        </div>
-      </div> -->
-    </div>
-
-    <!-- /.container-fluid-->
-    
 
     <!-- /.content-wrapper-->
     

@@ -2,7 +2,6 @@
 
 <?php
 session_start();
-//  include('studentLogin.php');  
 include('connection.php');
 
 $sid=$_SESSION['sid'];
@@ -88,8 +87,8 @@ $sid=$_SESSION['sid'];
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
-          <li><a href="index.php"><?php echo $name;  //echo getLoggedMemberID();// name of the login ?></a></li>
+           <?php echo $name; ?>
+          <li><a href="index.php"><?php echo $name; ?></a></li>
              <em class="fa fa-fw fa-sign-out"></em><li>Logout</li></li> 
         </li>
       </ul>
@@ -181,23 +180,6 @@ $sid=$_SESSION['sid'];
 
 
 
-
-     <!-- center area ends -->
-      <!-- <?php checkdetailsStudent(); ?>  -->
-
-      <!-- <div class="row">
-
-        <div class="col-12">
-          <?php //include '.php'; ?>
-
-
-           <?php //include 'main.php'; ?> 
-        </div>
-      </div> -->
-    </div>
-
-    <!-- /.container-fluid-->
-    
 
     <!-- /.content-wrapper-->
     

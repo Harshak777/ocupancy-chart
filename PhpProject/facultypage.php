@@ -4,7 +4,7 @@
 session_start();
   
 include('connection.php');
-
+$l=$_SESSION['loggedin_name'];
 
 
 ?>
@@ -71,8 +71,8 @@ include('connection.php');
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          <!-- <li><a href="#">Hello <?php echo $name; ?></a></li> -->
-          <li><a href="index.php"   style="font-size:18px;"><?php echo $_SESSION['loggedin_name'];  //echo getLoggedMemberID();// name of the login ?></a></li>
+        <?php echo $name; ?></a></li> 
+          <li><a href="index.php"   style="font-size:18px;"><?php echo $l?></a></li>
              <em class="fa fa-fw fa-sign-out"   style="font-size:28px;"></em><li style="font-size:18px;">Logout</li></li> <h1>   </h1>
              <br>
              <em class="fa fa-bell" style="font-size:28px;color:black"></em>
@@ -87,7 +87,7 @@ include('connection.php');
         <li class="breadcrumb-item">
           <a href="dashbord_student.php">Dashboard</a>
         </li>
-         <li class="breadcrumb-item active"><?php echo $_SESSION['loggedin_name']; ?></li>
+         <li class="breadcrumb-item active"><?php echo $l ?></li>
       </ol>
      
      <!-- center area -->
@@ -244,41 +244,6 @@ include('connection.php');
 
 
 
-    <script>
-    var index = -1;
-    function Substitute() {
-        var table = document.getElementById("timetable");
-        var cells = table.getElementsByTagName("td");
-        // window.alert(cells[3].innerHTML.toString());
-        for (i = 0; i < cells.length; i++) {
-            if (i % 8 == 6 || i % 8 == 7 || parseInt(i / 8) == 0 || i % 8 == 0) {
-                continue;
-            }
-            var currentCell = cells[i];
-            //var b = currentRow.getElementsByTagName("td")[0];
-            var createSubstituteHandler =
-                function (cell, i) {
-                    return function () {
-
-                        document.getElementById('cell_number').value = i;
-                        index = i;
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.onreadystatechange = function () {
-                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                                var modal = document.getElementById('myModal');
-                                modal.style.display = "block";
-                                document.getElementById("substitute").innerHTML = this.responseText;
-
-                            }
-                        };
-                        xmlhttp.open("GET", "getcellindex.php?i=" + i, false);
-                        xmlhttp.send();
-                    };
-                };
-            currentCell.onclick = createSubstituteHandler(currentCell, i);
-        }
-    }
-</script>
 
 
 
