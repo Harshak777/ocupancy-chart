@@ -151,7 +151,9 @@ driver.quit()
 
 #negative test case for student login
 
-driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
+driver = webdriver.Remote(
+   command_executor='http://127.0.0.1:3000/wd/hub',
+   desired_capabilities=DesiredCapabilities.CHROME,options=options)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="SLOGIN"]'
@@ -176,7 +178,9 @@ time.sleep(3)
 driver.quit()
 
 #negative test case admin login
-driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
+driver = webdriver.Remote(
+   command_executor='http://127.0.0.1:3000/wd/hub',
+   desired_capabilities=DesiredCapabilities.CHROME,options=options)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="ALOGIN"]'
