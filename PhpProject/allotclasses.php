@@ -86,7 +86,6 @@ if (isset($_POST['in_class'])) {
     <div  style="margin-top: 5px">
         <select name="in_class" class="list-group-item">
             <?php
-            include 'connection.php';
             $qq = "SELECT * FROM classrooms";
             $q = mysqli_query($conn,
                 $qq);
@@ -97,7 +96,7 @@ if (isset($_POST['in_class'])) {
                 while ($row = mysqli_fetch_assoc($q)) {
                     $rs = $row['status'];
                     if ($rs != 0)
-                        continue;
+                        {continue;}
                     $mystring .= '<option value="' . $row['name'] . '">' . $row['name'] . '</option>';
                 }
                 echo $mystring;
@@ -166,7 +165,6 @@ if (isset($_POST['in_class'])) {
         </tr>
         <tbody>
         <?php
-        include 'connection.php';
         $q = mysqli_query($conn,
            $qq);
         $courses = array('B.Tech 2nd Year', 'B.Tech 3rd Year', 'B.Tech 4rth Year');
