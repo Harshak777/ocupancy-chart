@@ -10,6 +10,8 @@ driver = webdriver.Remote(
    command_executor='http://127.0.0.1:3000/wd/hub',
    desired_capabilities=DesiredCapabilities.CHROME)
 
+
+
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="SLOGIN"]'
 
