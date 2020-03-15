@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 
-driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
+driver = webdriver.Chrome('chromedriver.exe',chrome_options=options)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="SLOGIN"]'
