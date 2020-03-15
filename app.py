@@ -6,7 +6,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 
-'''#positive student login
+#positive student login
 driver = webdriver.Remote(
    command_executor='http://127.0.0.1:3000/wd/hub',
    desired_capabilities=DesiredCapabilities.CHROME,options=options)
@@ -87,7 +87,7 @@ else:
     print('Faculty Login Test Failed')
 
 driver.quit()
-'''
+
 #positive test case creating a faculty account by logging into admin
 
 driver = webdriver.Remote(
