@@ -166,7 +166,7 @@ driver = webdriver.Remote(
    desired_capabilities=DesiredCapabilities.CHROME,options=options)
 
 driver.get('http://localhost/files/')
-NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="SLOGIN"]'
+NEXT_BUTTON_XPATH = '//input[@type="submit" and @name="SLOGIN"]'
 
 print('Starting Webpage title: ',driver.title)
 driver.implicitly_wait(2)
@@ -199,7 +199,7 @@ driver = webdriver.Remote(
    desired_capabilities=DesiredCapabilities.CHROME,options=options)
 
 driver.get('http://localhost/files/')
-NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="ALOGIN"]'
+NEXT_BUTTON_XPATH = '//input[@type="submit" and @name="ALOGIN"]'
 
 print('Starting Webpage title: ',driver.title)
 
