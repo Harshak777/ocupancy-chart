@@ -16,6 +16,7 @@ NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="SLOGIN"]'
 driver.implicitly_wait(2)
 time.sleep(2)
 
+
 print('Starting Webpage title: ',driver.title)
 
 #positive student login
