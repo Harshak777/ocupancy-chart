@@ -81,7 +81,7 @@ driver.implicitly_wait(1)
 time.sleep(1)
 
 print('Page changed to: ',driver.title)
-if "Faculty Timetable companion" == driver.title:
+if "faculty Timetable companion" == driver.title:
     print('Faculty Login Test Passed')
 else:
     print('Faculty Login Test Failed')
@@ -96,7 +96,7 @@ driver = webdriver.Remote(
 
 
 driver.get('http://localhost/files/')
-NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="ALOGIN"]'
+NEXT_BUTTON_XPATH = '//input[@type="submit" and @name="ALOGIN"]'
 
 print('Starting Webpage title: ',driver.title)
 
