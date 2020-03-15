@@ -158,7 +158,7 @@ else:
     print('Admin Login and Faculty creation Failed')
 
 driver.quit()
-
+'''
 #negative test case for student login
 
 driver = webdriver.Remote(
@@ -225,3 +225,4 @@ else:
     print('Admin Login Test Failed')
 
 driver.quit()
+''''
