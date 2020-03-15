@@ -44,10 +44,14 @@ else:
 
 driver.quit()
 
-driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
+driver = webdriver.Remote(
+   command_executor='http://127.0.0.1:3000/wd/hub',
+   desired_capabilities=DesiredCapabilities.CHROME)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//button[@type="submit" and @id="viewsemester"]'
+
+print('Starting Webpage title: ',driver.title)
 
 driver.implicitly_wait(2)
 time.sleep(2)
@@ -63,6 +67,8 @@ driver.implicitly_wait(2)
 time.sleep(2)
 driver.find_element_by_id('FLOGIN').submit()
 
+print('Page changed to: ',driver.title)
+
 if "Teacher Timetable companion" == driver.title:
     print('Teacher Login Test Passed')
 else:
@@ -70,7 +76,11 @@ else:
 
 driver.quit()
 
-driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
+driver = webdriver.Remote(
+   command_executor='http://127.0.0.1:3000/wd/hub',
+   desired_capabilities=DesiredCapabilities.CHROME)
+
+print('Starting Webpage title: ',driver.title)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="ALOGIN"]'
@@ -89,9 +99,11 @@ driver.implicitly_wait(1)
 time.sleep(1)
 driver.find_element_by_xpath(NEXT_BUTTON_XPATH).submit()
 
+print('Page changed to: ',driver.title)
+
 if 'Admin Timetable companion' == driver.title:
-    print('Teacher Login Test Passed')
+    print('Admin Login Test Passed')
 else:
-    print('Teacher Login Test Failed')
+    print('Admin Login Test Failed')
 
 driver.quit()    
