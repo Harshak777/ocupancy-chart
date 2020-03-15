@@ -43,6 +43,8 @@ driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//button[@type="submit" and @id="viewsemester"]'
 
+print('Starting Webpage title: ',driver.title)
+
 driver.implicitly_wait(2)
 time.sleep(2)
 
@@ -56,6 +58,8 @@ driver.find_element_by_name('password').send_keys("123456789")
 driver.implicitly_wait(2)
 time.sleep(2)
 driver.find_element_by_id('FLOGIN').submit()
+
+print('Page changed to: ',driver.title)
 
 if "Teacher Timetable companion" == driver.title:
     print('Teacher Login Test Passed')
@@ -72,6 +76,8 @@ NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="ALOGIN"]'
 driver.implicitly_wait(3)
 time.sleep(3)
 
+print('Starting Webpage title: ',driver.title)
+
 driver.find_element_by_id('adminLoginBtn').click()
 driver.implicitly_wait(1)
 time.sleep(1)
@@ -83,8 +89,10 @@ driver.implicitly_wait(1)
 time.sleep(1)
 driver.find_element_by_xpath(NEXT_BUTTON_XPATH).submit()
 
+print('Page changed to: ',driver.title)
+
 if 'Admin Timetable companion' == driver.title:
-    print('Teacher Login Test Passed')
+    print('Admin Login Test Passed')
 else:
-    print('Teacher Login Test Failed')
+    print('Admin Login Test Failed')
     
