@@ -44,9 +44,7 @@ else:
 
 driver.quit()
 
-driver = webdriver.Remote(
-   command_executor='http://127.0.0.1:3000/wd/hub',
-   desired_capabilities=DesiredCapabilities.CHROME)
+driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//button[@type="submit" and @id="viewsemester"]'
@@ -72,9 +70,7 @@ else:
 
 driver.quit()
 
-driver = webdriver.Remote(
-   command_executor='http://127.0.0.1:3000/wd/hub',
-   desired_capabilities=DesiredCapabilities.CHROME)
+driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="ALOGIN"]'
@@ -97,4 +93,5 @@ if 'Admin Timetable companion' == driver.title:
     print('Teacher Login Test Passed')
 else:
     print('Teacher Login Test Failed')
-    
+
+driver.quit()    
