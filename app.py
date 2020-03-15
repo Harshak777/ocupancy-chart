@@ -1,11 +1,14 @@
 from selenium import webdriver
 import time
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 
-driver = webdriver.Chrome('chromedriver.exe',chrome_options=options)
+driver = webdriver.Remote(
+   command_executor='http://127.0.0.1:3000/wd/hub',
+   desired_capabilities=DesiredCapabilities.CHROME)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="SLOGIN"]'
@@ -43,8 +46,6 @@ driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//button[@type="submit" and @id="viewsemester"]'
 
-print('Starting Webpage title: ',driver.title)
-
 driver.implicitly_wait(2)
 time.sleep(2)
 
@@ -58,8 +59,6 @@ driver.find_element_by_name('password').send_keys("123456789")
 driver.implicitly_wait(2)
 time.sleep(2)
 driver.find_element_by_id('FLOGIN').submit()
-
-print('Page changed to: ',driver.title)
 
 if "Teacher Timetable companion" == driver.title:
     print('Teacher Login Test Passed')
@@ -76,8 +75,6 @@ NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="ALOGIN"]'
 driver.implicitly_wait(3)
 time.sleep(3)
 
-print('Starting Webpage title: ',driver.title)
-
 driver.find_element_by_id('adminLoginBtn').click()
 driver.implicitly_wait(1)
 time.sleep(1)
@@ -89,10 +86,8 @@ driver.implicitly_wait(1)
 time.sleep(1)
 driver.find_element_by_xpath(NEXT_BUTTON_XPATH).submit()
 
-print('Page changed to: ',driver.title)
-
 if 'Admin Timetable companion' == driver.title:
-    print('Admin Login Test Passed')
+    print('Teacher Login Test Passed')
 else:
-    print('Admin Login Test Failed')
+    print('Teacher Login Test Failed')
     
