@@ -6,9 +6,11 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 
+#positive student login
+
 driver = webdriver.Remote(
    command_executor='http://127.0.0.1:3000/wd/hub',
-   desired_capabilities=DesiredCapabilities.CHROME)
+   desired_capabilities=DesiredCapabilities.CHROME,options=options)
 
 
 
@@ -44,9 +46,11 @@ else:
 
 driver.quit()
 
+#positive test case for Faculty login
+
 driver = webdriver.Remote(
    command_executor='http://127.0.0.1:3000/wd/hub',
-   desired_capabilities=DesiredCapabilities.CHROME)
+   desired_capabilities=DesiredCapabilities.CHROME,options=options)
 
 driver.get('http://localhost/files/')
 NEXT_BUTTON_XPATH = '//button[@type="submit" and @id="viewsemester"]'
@@ -67,18 +71,26 @@ driver.implicitly_wait(2)
 time.sleep(2)
 driver.find_element_by_id('FLOGIN').submit()
 
-print('Page changed to: ',driver.title)
+driver.implicitly_wait(3)
+time.sleep(3)
 
-if "Teacher Timetable companion" == driver.title:
-    print('Teacher Login Test Passed')
-else:
-    print('Teacher Login Test Failed')
+select = Select(driver.find_element_by_name('class_room'))
+driver.implicitly_wait(1)
+time.sleep(1)
+select.select_by_visible_text('B202')
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_xpath(NEXT_BUTTON_XPATH).submit()
+driver.implicitly_wait(1)
+time.sleep(1)
 
 driver.quit()
 
+#positive test case creating a faculty account by logging into admin
+
 driver = webdriver.Remote(
    command_executor='http://127.0.0.1:3000/wd/hub',
-   desired_capabilities=DesiredCapabilities.CHROME)
+   desired_capabilities=DesiredCapabilities.CHROME,options=options)
 
 print('Starting Webpage title: ',driver.title)
 
@@ -99,11 +111,89 @@ driver.implicitly_wait(1)
 time.sleep(1)
 driver.find_element_by_xpath(NEXT_BUTTON_XPATH).submit()
 
-print('Page changed to: ',driver.title)
+driver.implicitly_wait(3)
+time.sleep(3)
 
-if 'Admin Timetable companion' == driver.title:
-    print('Admin Login Test Passed')
-else:
-    print('Admin Login Test Failed')
+driver.find_element_by_id('teachermanual').click()
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_id('teachername').send_keys("John")
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_id('facultyno').send_keys("T302")
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_id('alias_name').send_keys("jwk")
+driver.implicitly_wait(1)
+time.sleep(1)
+select = Select(driver.find_element_by_id('designation'))
+driver.implicitly_wait(1)
+time.sleep(1)
+select.select_by_visible_text('Professor')
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_id('teachercontactnumber').send_keys("9133140732")
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_id('teacheremailid').send_keys("johnwick@gmail.com")
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_id('teacherpassword').send_keys("123678")
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_id('teacheraddress').send_keys("B302")
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_name('ADD').submit()
+driver.implicitly_wait(5)
+time.sleep(5)
+driver.quit()
 
-driver.quit()    
+#negative test case for student login
+
+driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
+
+driver.get('http://localhost/files/')
+NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="SLOGIN"]'
+
+driver.implicitly_wait(2)
+time.sleep(2)
+
+driver.find_element_by_id('studentLoginBtn').click()
+driver.implicitly_wait(2)
+time.sleep(2)
+driver.find_element_by_name('sroll').send_keys("cb.en.u4cse17026")
+driver.implicitly_wait(2)
+time.sleep(2)
+driver.find_element_by_name('spassword').send_keys("vijayjonathan")
+driver.implicitly_wait(2)
+time.sleep(2)
+driver.find_element_by_xpath(NEXT_BUTTON_XPATH).submit()
+
+driver.implicitly_wait(3)
+time.sleep(3)
+
+driver.quit()
+
+#negative test case admin login
+driver = webdriver.Chrome('C:/Webdriver/chromedriver.exe',chrome_options=options)
+
+driver.get('http://localhost/files/')
+NEXT_BUTTON_XPATH = '//input[@type="submit" and @id="ALOGIN"]'
+
+driver.implicitly_wait(3)
+time.sleep(3)
+
+driver.find_element_by_id('adminLoginBtn').click()
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_name('UN').send_keys("admin123")
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_name('PASS').send_keys("pass123")
+driver.implicitly_wait(1)
+time.sleep(1)
+driver.find_element_by_xpath(NEXT_BUTTON_XPATH).submit()
+driver.quit()
+driver.implicitly_wait(3)
+time.sleep(3)
